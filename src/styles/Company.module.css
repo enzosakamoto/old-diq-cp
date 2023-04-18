@@ -1,11 +1,16 @@
 .page {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  gap: 5rem;
 }
 
-.page h1 {
-  font-size: 20rem;
+.company-texts h1 {
+  font-size: 10rem;
+}
+
+.company-texts span {
+  font-size: 2rem;
 }

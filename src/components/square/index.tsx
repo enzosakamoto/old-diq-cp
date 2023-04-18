@@ -5,12 +5,12 @@ import Link from "next/link";
 export default function Square(company: any) {
   return (
     <>
-      <Link href={`/company/${company.name}`}>
+      <Link href={`/companies/${company.name}`}>
         <div className={styles.square}>
           <Image
             className={styles.image}
             src={company.image}
-            alt={company.name}
+            alt={`Logo da ${company.name}`}
           ></Image>
         </div>
       </Link>
