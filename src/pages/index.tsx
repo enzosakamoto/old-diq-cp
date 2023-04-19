@@ -30,7 +30,11 @@ export default function Home() {
           <div className={styles["companies-squares"]}>
             {companies.map((company, id) => {
               return (
-                <Square image={company.image} name={company.name} key={id} />
+                <Square
+                  image={company.getImage()}
+                  name={company.getName()}
+                  key={id}
+                />
               );
             })}
           </div>
