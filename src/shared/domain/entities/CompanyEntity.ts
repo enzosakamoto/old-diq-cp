@@ -17,6 +17,8 @@ export class CompanyEntity {
     this.desc = desc;
     this.link = link;
     this.contact = contact;
+
+    // Trocar imagem string por StaticImageData
   }
 
   public getName(): string {

@@ -10,6 +10,8 @@ export default function Square({ name, image }: any) {
           <Image
             className={styles.image}
             src={image}
+            // width={300}
+            // height={335}
             alt={`Logo da ${name}`}
           ></Image>
         </div>

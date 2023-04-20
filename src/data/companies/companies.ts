@@ -5,19 +5,43 @@ import error from "@/assets/error.svg";
 import { CompanyEntity } from "@/shared/domain/entities/CompanyEntity";
 
 // export const companies = [
-//     {name: "Sadia", image: sadia, desc: "Sadia is a company that produces food products."},
-//     {name: "Uber", image: uber, desc: "Uber is a company that produces food products."},
-//     {name: "Volks", image: volks, desc: "Volks is a company that produces food products."},
-//     {name: "Sadia", image: sadia, desc: "Sadia is a company that produces food products."},
-//     {name: "Uber", image: uber, desc: "Uber is a company that produces food products."},
-//     {name: "Volks", image: volks, desc: "Volks is a company that produces food products."},
-//     {name: "Sadia", image: sadia, desc: "Sadia is a company that produces food products."},
-//     {name: "Uber", image: uber, desc: "Uber is a company that produces food products."},
-//     {name: "Volks", image: volks, desc: "Volks is a company that produces food products."},
-//     {name: "Sadia", image: sadia, desc: "Sadia is a company that produces food products."},
-//     {name: "Uber", image: uber, desc: "Uber is a company that produces food products."},
-//     {name: "Volks", image: volks, desc: "Volks is a company that produces food products."},
-// ]
+//   {
+//     name: "Sadia",
+//     image: "assets/sadia.svg",
+//     desc: "Sadia is a company that produces food products.",
+//     link: "https://www.sadia.com.br/",
+//   },
+//   {
+//     name: "Uber",
+//     image: uber,
+//     desc: "Uber is a company that produces food products.",
+//     link: "https://www.uber.com/br/pt-br/",
+//   },
+//   {
+//     name: "Volks",
+//     image: volks,
+//     desc: "Volks is a company that produces food products.",
+//     link: "https://www.vw.com.br/pt.html",
+//   },
+//   {
+//     name: "Sadia",
+//     image: sadia,
+//     desc: "Sadia is a company that produces food products.",
+//     link: "https://www.sadia.com.br/",
+//   },
+//   {
+//     name: "Uber",
+//     image: uber,
+//     desc: "Uber is a company that produces food products.",
+//     link: "https://www.uber.com/br/pt-br/",
+//   },
+//   {
+//     name: "Volks",
+//     image: volks,
+//     desc: "Volks is a company that produces food products.",
+//     link: "https://www.vw.com.br/pt.html",
+//   },
+// ];
 
 export const companies: CompanyEntity[] = [
   new CompanyEntity(
