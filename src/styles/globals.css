@@ -16,6 +16,10 @@
   font-size: 62.5%;
 }
 
+*:focus {
+  outline: none;
+}
+
 html,
 body {
   height: 100%;

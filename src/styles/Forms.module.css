@@ -1,0 +1,85 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 3rem;
+  margin-top: 5vh;
+}
+
+.initial-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.initial-texts h1 {
+  font-size: 6rem;
+}
+
+.initial-texts p {
+  font-size: 3rem;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.forms-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.forms-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.forms-input label {
+  font-size: 2.5rem;
+  width: 40%;
+}
+
+.forms-input input {
+  font-size: 2.5rem;
+  min-width: 700px;
+  border-radius: 24px;
+  background-color: var(--input-color);
+}
+
+.forms-big-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.forms-big-input label {
+  font-size: 2.5rem;
+}
+
+.forms-big-input input {
+  font-size: 2.5rem;
+  min-width: 800px;
+  min-height: 200px;
+  border-radius: 24px;
+  background-color: var(--input-color);
+}
+
+.button {
+  padding: 1rem;
+  background-color: var(--backgroundcolor-contrast);
+  border-radius: 14px;
+  font-size: 2.4rem;
+}
