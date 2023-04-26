@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Square({ name, image }: any) {
   return (
     <>
-      <Link href={`/companies/${name.toLowerCase()}`}>
+      <Link href={"/companies/sadia"}>
         <div className={styles.square}>
           <Image
             className={styles.image}

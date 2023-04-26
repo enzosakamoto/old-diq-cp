@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import engineer from "@/assets/engineer.svg";
 import { companies } from "@/data/companies/companies";
 import Square from "@/components/square";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <section className={styles.home}>
           <aside id="home" className={styles["home-texts"]}>
             <h1>DIQ-CP IMT</h1>
-            <h2>PARCERIAS</h2>
+            <h2>PARCEIRAS</h2>
           </aside>
           <span className={styles["home-image"]}>
             <Image
@@ -29,13 +30,14 @@ export default function Home() {
           <h2>Principais parceiras</h2>
           <div className={styles["companies-squares"]}>
             {companies.map((company, id) => {
-              return (
-                <Square
-                  image={company.getImage()}
-                  name={company.getName()}
-                  key={id}
-                />
-              );
+              if (id < 6)
+                return (
+                  <Square
+                    image={company.image}
+                    name={company.name}
+                    key={company.id}
+                  />
+                );
             })}
           </div>
           <Link href="/companies">
@@ -43,6 +45,7 @@ export default function Home() {
           </Link>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

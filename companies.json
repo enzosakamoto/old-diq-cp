@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Sadia",
+    "image": "Sadia",
+    "desc": "Sadia is a company that produces food products.",
+    "link": "https://www.sadia.com.br/"
+  },
+  {
+    "id": 2,
+    "name": "Uber",
+    "image": "Sadia",
+    "desc": "Uber is a company that produces food products.",
+    "link": "https://www.uber.com/br/pt-br/"
+  },
+  {
+    "id": 3,
+    "name": "Volks",
+    "image": "Sadia",
+    "desc": "Volks is a company that produces food products.",
+    "link": "https://www.vw.com.br/pt.html"
+  },
+  {
+    "id": 4,
+    "name": "Sadia",
+    "image": "Sadia",
+    "desc": "Sadia is a company that produces food products.",
+    "link": "https://www.sadia.com.br/"
+  },
+  {
+    "id": 5,
+    "name": "Uber",
+    "image": "Sadia",
+    "desc": "Uber is a company that produces food products.",
+    "link": "https://www.uber.com/br/pt-br/"
+  },
+  {
+    "id": 6,
+    "name": "Volks",
+    "image": "Sadia",
+    "desc": "Volks is a company that produces food products.",
+    "link": "https://www.vw.com.br/pt.html"
+  }
+]
