@@ -7,10 +7,32 @@
   gap: 5rem;
 }
 
+.company {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  height: 335px;
+}
+
+.company-texts {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 4rem;
+}
+
 .company-texts h1 {
   font-size: 10rem;
 }
 
-.company-texts span {
+.company-activities h2 {
+  font-size: 5rem;
+}
+
+.company-activities span {
   font-size: 2rem;
 }
