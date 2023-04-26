@@ -38,7 +38,7 @@ import PageName from "@/components/head";
 // };
 
 export default function Company() {
-  const company = companies[0];
+  const company = companies[1];
 
   return (
     <>
