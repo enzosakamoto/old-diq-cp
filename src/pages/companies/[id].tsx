@@ -6,6 +6,8 @@ import Link from "next/link";
 import { CompanyEntity } from "@/shared/domain/entities/CompanyEntity";
 import Footer from "@/components/footer";
 import PageName from "@/components/head";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 // interface Props {
 //   company: CompanyEntity;
@@ -38,33 +40,34 @@ import PageName from "@/components/head";
 // };
 
 export default function Company() {
-  const company = companies[0];
+  const router = useRouter();
+  const { id } = router.query;
+
+  const company = companies.find((company) => company.id === Number(id));
 
   return (
     <>
       <PageName
-        title={`DIQ-CP | ${company.name}`}
-        content={`Página detalhada da ${company.name}`}
+        title={`DIQ-CP | ${company!.name}`}
+        content={`Página detalhada da ${company!.name}`}
       />
       <Navbar />
       <main className={styles.page}>
         <section className={styles.company}>
-          <Link href={company.link} rel="noopener noreferrer" target="_blank">
+          <Link href={company!.link} rel="noopener noreferrer" target="_blank">
             <aside className={styles["company-link"]}>
               <Image
                 className={styles["company-image"]}
-                src={company.image}
-                alt={`Logo da ${company.name}`}
+                src={company!.image}
+                alt={`Logo da ${company!.name}`}
               ></Image>
             </aside>
           </Link>
           <article className={styles["company-texts"]}>
-            <h1>
-              {company.name.charAt(0).toUpperCase() + company.name.slice(1)}
-            </h1>
+            <h1>{company!.name}</h1>
             <div className={styles["company-activities"]}>
               <h2>Principais atividades</h2>
-              <span>{company.desc}</span>
+              <span>{company!.desc}</span>
             </div>
           </article>
         </section>
@@ -73,19 +76,3 @@ export default function Company() {
     </>
   );
 }
-
-// export async function getStaticPaths() {
-//   const paths = companies.map((company) => ({
-//     params: { name: company.getName() },
-//   }));
-
-//   return { paths, fallback: false };
-// }
-
-// export async function getStaticProps({ params }: any) {
-//   const company = companies.find(
-//     (company) => company.getName() === params.name
-//   );
-
-//   return { props: { company } };
-// }
