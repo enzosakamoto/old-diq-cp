@@ -1,0 +1,120 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 3rem;
+  margin-top: 8vh;
+}
+
+.initial-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.initial-texts h1 {
+  font-size: 6rem;
+}
+
+.initial-texts p {
+  font-size: 3rem;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.forms-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 50vw;
+}
+
+.forms-label {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.forms-label label {
+  font-size: 2.5rem;
+}
+
+.forms-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 85%;
+}
+
+.forms-input input {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 24px;
+  background-color: var(--input-color);
+  padding: 5px 10px 5px 10px;
+  border: none;
+}
+
+.forms-big-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 50vw;
+}
+
+.forms-big-input label {
+  font-size: 2.5rem;
+}
+
+.forms-big-input textarea {
+  font-size: 2.5rem;
+  width: 100%;
+  min-height: 20rem;
+  border-radius: 24px;
+  background-color: var(--input-color);
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  resize: none;
+  padding: 10px 15px 10px 15px;
+}
+
+.forms-big-input textarea::-webkit-scrollbar {
+  width: 25px;
+}
+
+.forms-big-input textarea::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: var(--font-color);
+}
+
+.forms-big-input textarea::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #2c3e50;
+}
+
+.button {
+  padding: 1rem;
+  background-color: var(--backgroundcolor-contrast);
+  border-radius: 14px;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  color: var(--font-color);
+}
+
+.button:hover {
+  scale: 1.1;
+}
