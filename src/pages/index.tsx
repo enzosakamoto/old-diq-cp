@@ -38,6 +38,7 @@ export default function Home() {
                   <Square
                     image={company.image}
                     name={company.name}
+                    id={company.id}
                     key={company.id}
                   />
                 );
