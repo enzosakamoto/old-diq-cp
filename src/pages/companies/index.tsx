@@ -22,6 +22,7 @@ export default function CompaniesPage() {
               <Square
                 image={company.image}
                 name={company.name}
+                id={company.id}
                 key={company.id}
               />
             );
