@@ -2,9 +2,30 @@ import Footer from "@/components/footer";
 import PageName from "@/components/head";
 import Navbar from "@/components/navbar";
 import styles from "@/styles/Forms.module.css";
-import Link from "next/link";
+import { useState } from "react";
 
 export default function Forms() {
+  const [forms, setForms] = useState({
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    about: "",
+  });
+
+  function handleSubmit(event: any) {
+    let validation = true;
+    event.preventDefault();
+    Object.values(forms).forEach((value) => {
+      if (value === "" || value === undefined) validation = false;
+    });
+    if (!validation) alert("Preencha todos os campos");
+    else {
+      alert("Email enviado!");
+      console.table(forms);
+    }
+  }
+
   return (
     <>
       <PageName
@@ -20,31 +41,53 @@ export default function Forms() {
         </section>
         <section className={styles.forms}>
           <article className={styles["forms-inputs"]}>
-            <div className={styles["forms-input"]}>
+            <div className={styles["forms-label"]}>
               <label htmlFor="">Nome</label>
-              <input type="text" />
-            </div>
-            <div className={styles["forms-input"]}>
               <label htmlFor="">Empresa</label>
-              <input type="text" />
-            </div>
-            <div className={styles["forms-input"]}>
               <label htmlFor="">Telefone</label>
-              <input type="text" />
+              <label htmlFor="">E-mail</label>
             </div>
             <div className={styles["forms-input"]}>
-              <label htmlFor="">E-mail</label>
-              <input type="text" />
+              <input
+                type="text"
+                onChange={(event) =>
+                  setForms({ ...forms, name: event.target.value })
+                }
+              />
+              <input
+                type="text"
+                onChange={(event) =>
+                  setForms({ ...forms, company: event.target.value })
+                }
+              />
+              <input
+                type="text"
+                placeholder="(xx) xxxxx-xxxx"
+                onChange={(event) =>
+                  setForms({ ...forms, phone: event.target.value })
+                }
+              />
+              <input
+                type="text"
+                placeholder="exemplo@exemplo.com"
+                onChange={(event) =>
+                  setForms({ ...forms, email: event.target.value })
+                }
+              />
             </div>
           </article>
           <article className={styles["forms-big-input"]}>
             <label htmlFor="">Conte-nos um pouco sobre a empresa</label>
-            <input type="text" />
+            <textarea
+              onChange={(event) =>
+                setForms({ ...forms, about: event.target.value })
+              }
+            ></textarea>
           </article>
         </section>
-        <Link href="/companies">
-          <div className={styles["button"]}>enviar</div>
-        </Link>
+        <div onClick={handleSubmit} className={styles.button}>
+          enviar
+        </div>
       </main>
       <Footer />
     </>
