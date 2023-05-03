@@ -6,7 +6,6 @@ import engineer from "@/assets/engineer.svg";
 import { companies } from "@/data/companies/companies";
 import Square from "@/components/square";
 import Footer from "@/components/footer";
-import Head from "next/head";
 import PageName from "@/components/head";
 
 export default function Home() {
