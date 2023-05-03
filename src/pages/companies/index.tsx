@@ -5,7 +5,7 @@ import Square from "@/components/square";
 import { companies } from "@/data/companies/companies";
 import styles from "@/styles/Companies.module.css";
 import { useState } from "react";
-import error from "@/assets/error.svg";
+import nodata from "@/assets/nodata.svg";
 import Image from "next/image";
 
 export default function CompaniesPage() {
@@ -24,7 +24,6 @@ export default function CompaniesPage() {
           placeholder="Pesquisar..."
           onChange={(event) => {
             setSearch(event.target.value.toLowerCase());
-            console.log(search);
           }}
         />
         <section className={styles["companies-squares"]}>
@@ -59,7 +58,7 @@ export default function CompaniesPage() {
               <article className={styles["companies-error"]}>
                 <span>Não foi possível encontrar!</span>
                 <span>Verifique o nome da empresa.</span>
-                <Image src={error} width={300} height={300} alt="Erro" />
+                <Image src={nodata} width={300} height={300} alt="Erro" />
               </article>
             </>
           )}
