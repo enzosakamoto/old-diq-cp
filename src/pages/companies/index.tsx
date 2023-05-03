@@ -21,7 +21,7 @@ export default function CompaniesPage() {
         <h1>Todas as parceiras</h1>
         <input
           type="text"
-          placeholder="Pesquisar"
+          placeholder="Pesquisar..."
           onChange={(event) => {
             setSearch(event.target.value.toLowerCase());
             console.log(search);

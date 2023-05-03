@@ -14,12 +14,19 @@
 
 .page input {
   font-size: 2.5rem;
+  background-image: url("../assets/search-icon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
   width: 50%;
   font-family: "Montserrat", sans-serif;
   border-radius: 24px;
   background-color: var(--input-color);
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 50px;
   border: none;
+}
+
+.page input::placeholder {
+  color: #000000;
 }
 
 .companies-squares {
