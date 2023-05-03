@@ -34,8 +34,12 @@ export default function Company() {
           <article className={styles["company-texts"]}>
             <h1>{company!.name}</h1>
             <div className={styles["company-activities"]}>
-              <h2>Principais atividades</h2>
-              <span>{company!.desc}</span>
+              <h2>Segmento de atuação</h2>
+              {company?.desc ? (
+                <span>{company!.desc}</span>
+              ) : (
+                <span>Não informado</span>
+              )}
             </div>
           </article>
         </section>

@@ -7,35 +7,39 @@ import geogebra from "@/assets/geogebra.svg";
 import casio from "@/assets/casio.svg";
 import santander from "@/assets/santander.svg";
 import solid from "@/assets/solid.svg";
+import abb from "@/assets/abb.png";
+import abceram from "@/assets/abceram.png";
+import abece from "@/assets/abece.jpg";
+import abendi from "@/assets/abendi.png";
 
 export const companies = [
   {
     id: 1,
-    name: "Sadia",
-    image: sadia,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget mattis ante, id pellentesque risus. Phasellus id imperdiet neque. Fusce est sapien, tristique auctor rhoncus nec, aliquet vel ligula.",
-    link: "https://www.sadia.com.br/",
+    name: "ABB Automação Ltda",
+    image: abb,
+    desc: "Segmentos de energia, papel e celulose, mineração, óleo e gás, alimentos e bebidas.",
+    link: "https://new.abb.com/br",
   },
   {
     id: 2,
-    name: "Uber",
-    image: uber,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget mattis ante, id pellentesque risus. Phasellus id imperdiet neque. Fusce est sapien, tristique auctor rhoncus nec, aliquet vel ligula.",
-    link: "https://www.uber.com/br/pt-br/",
+    name: "ABCERAM",
+    image: abceram,
+    desc: "Segmento de cerâmica onde compreende todos os materiais inorgânicos, não metálicos, obtidos geralmente após tratamento térmico em temperaturas elevadas.",
+    link: "https://abceram.org.br",
   },
   {
     id: 3,
-    name: "Volks",
-    image: volks,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget mattis ante, id pellentesque risus. Phasellus id imperdiet neque. Fusce est sapien, tristique auctor rhoncus nec, aliquet vel ligula.",
-    link: "https://www.vw.com.br/pt.html",
+    name: "ABECE",
+    image: abece,
+    desc: "Ramo de Engenharia e Consultoria Estrutural.",
+    link: "https://site.abece.com.br",
   },
   {
     id: 4,
-    name: "Intel",
-    image: intel,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget mattis ante, id pellentesque risus. Phasellus id imperdiet neque. Fusce est sapien, tristique auctor rhoncus nec, aliquet vel ligula.",
-    link: "https://www.sadia.com.br/",
+    name: "ABENDI",
+    image: abendi,
+    desc: "Gestão de projetos de pesquisa, desenvolvimento e inovação, capacitação, qualificação e certificação, normalização técnica e difusão do conhecimento nas áreas de Ensaios Não Destrutivos, Inspeções, Acesso por Corda, Saneamento & Infraestrutura, Qualidade & Meio Ambiente e Monitoramento de Condição.",
+    link: "http://www.abendihomologacao.com.br/abendi/",
   },
   {
     id: 5,
