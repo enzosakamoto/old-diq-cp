@@ -22,7 +22,11 @@ export default function Company() {
       <Navbar />
       <main className={styles.page}>
         <section className={styles.company}>
-          <Link href={company!.link} rel="noopener noreferrer" target="_blank">
+          <Link
+            href={company!.link}
+            rel="noopener noreferrer"
+            target={company?.link === "/" ? "" : "_blank"}
+          >
             <aside className={styles["company-link"]}>
               <Image
                 className={styles["company-image"]}
