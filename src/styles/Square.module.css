@@ -16,4 +16,5 @@
   max-height: 335px;
   position: relative !important;
   object-fit: cover;
+  border-radius: 24px;
 }

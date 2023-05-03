@@ -1,4 +1,5 @@
 import Footer from "@/components/footer";
+import PageName from "@/components/head";
 import Navbar from "@/components/navbar";
 import Square from "@/components/square";
 import { companies } from "@/data/companies/companies";
@@ -8,6 +9,10 @@ import Link from "next/link";
 export default function CompaniesPage() {
   return (
     <>
+      <PageName
+        title="DIQ-CP | PARCEIRAS"
+        content="Página das parceiras do IMT"
+      />
       <Navbar />
       <main className={styles.page}>
         <h1>Todas as parceiras</h1>
@@ -17,6 +22,7 @@ export default function CompaniesPage() {
               <Square
                 image={company.image}
                 name={company.name}
+                id={company.id}
                 key={company.id}
               />
             );
