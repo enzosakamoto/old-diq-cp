@@ -120,8 +120,3 @@
 .button:disabled {
   cursor: not-allowed;
 }
-
-.forms-error {
-  color: #ff0000;
-  font-size: 5rem;
-}

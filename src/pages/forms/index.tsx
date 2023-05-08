@@ -14,16 +14,13 @@ export default function Forms() {
     phone: "",
     email: "",
     about: "",
-    isLoading: false,
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setForms((prev) => ({
-      ...prev,
-      isLoading: true,
-    }));
-
+    setLoading(true);
     try {
       await sendContactForm(forms);
       setForms({
@@ -32,7 +29,6 @@ export default function Forms() {
         phone: "",
         email: "",
         about: "",
-        isLoading: false,
       });
       toast.success("Email enviado com sucesso", {
         position: "top-center",
@@ -47,11 +43,8 @@ export default function Forms() {
           fontSize: "4.5rem",
         },
       });
+      setLoading(false);
     } catch (error: any) {
-      setForms((prev) => ({
-        ...prev,
-        isLoading: false,
-      }));
       toast.error("Falha ao enviar o e-mail!", {
         position: "top-center",
         autoClose: 2500,
@@ -65,6 +58,7 @@ export default function Forms() {
           fontSize: "4.5rem",
         },
       });
+      setLoading(false);
     }
   };
 
@@ -96,7 +90,6 @@ export default function Forms() {
                 onChange={(event) =>
                   setForms({ ...forms, name: event.target.value })
                 }
-                required
               />
               <input
                 type="text"
@@ -142,10 +135,10 @@ export default function Forms() {
             !forms.email ||
             !forms.company ||
             !forms.about ||
-            forms.isLoading
+            loading
           }
         >
-          enviar
+          {loading ? "enviando..." : "enviar"}
         </button>
         <ToastContainer />
       </main>
