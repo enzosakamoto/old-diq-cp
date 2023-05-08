@@ -1,8 +1,11 @@
 import Footer from "@/components/footer";
 import PageName from "@/components/head";
 import Navbar from "@/components/navbar";
+import { sendContactForm } from "@/lib/api";
 import styles from "@/styles/Forms.module.css";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Forms() {
   const [forms, setForms] = useState({
@@ -13,18 +16,51 @@ export default function Forms() {
     about: "",
   });
 
-  function handleSubmit(event: any) {
-    let validation = true;
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    Object.values(forms).forEach((value) => {
-      if (value === "" || value === undefined) validation = false;
-    });
-    if (!validation) alert("Preencha todos os campos");
-    else {
-      alert("Email enviado!");
-      console.table(forms);
+    setLoading(true);
+    try {
+      await sendContactForm(forms);
+      setForms({
+        name: "",
+        company: "",
+        phone: "",
+        email: "",
+        about: "",
+      });
+      toast.success("Email enviado com sucesso", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        style: {
+          fontSize: "4.5rem",
+        },
+      });
+      setLoading(false);
+    } catch (error: any) {
+      toast.error("Falha ao enviar o e-mail!", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        style: {
+          fontSize: "4.5rem",
+        },
+      });
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <>
@@ -50,18 +86,21 @@ export default function Forms() {
             <div className={styles["forms-input"]}>
               <input
                 type="text"
+                value={forms.name}
                 onChange={(event) =>
                   setForms({ ...forms, name: event.target.value })
                 }
               />
               <input
                 type="text"
+                value={forms.company}
                 onChange={(event) =>
                   setForms({ ...forms, company: event.target.value })
                 }
               />
               <input
                 type="text"
+                value={forms.phone}
                 placeholder="(xx) xxxxx-xxxx"
                 onChange={(event) =>
                   setForms({ ...forms, phone: event.target.value })
@@ -69,6 +108,7 @@ export default function Forms() {
               />
               <input
                 type="text"
+                value={forms.email}
                 placeholder="exemplo@exemplo.com"
                 onChange={(event) =>
                   setForms({ ...forms, email: event.target.value })
@@ -79,15 +119,28 @@ export default function Forms() {
           <article className={styles["forms-big-input"]}>
             <label htmlFor="">Conte-nos um pouco sobre a empresa</label>
             <textarea
+              value={forms.about}
               onChange={(event) =>
                 setForms({ ...forms, about: event.target.value })
               }
             ></textarea>
           </article>
         </section>
-        <div onClick={handleSubmit} className={styles.button}>
-          enviar
-        </div>
+        <button
+          onClick={handleSubmit}
+          className={styles.button}
+          disabled={
+            !forms.name ||
+            !forms.phone ||
+            !forms.email ||
+            !forms.company ||
+            !forms.about ||
+            loading
+          }
+        >
+          {loading ? "enviando..." : "enviar"}
+        </button>
+        <ToastContainer />
       </main>
       <Footer />
     </>
