@@ -28,7 +28,7 @@ export default function CompaniesPage() {
         />
         <section className={styles["companies-squares"]}>
           {search === "" ? (
-            companies.map((company, id) => {
+            companies.map((company) => {
               return (
                 <Square
                   image={company.image}
