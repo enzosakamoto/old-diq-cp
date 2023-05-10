@@ -10,31 +10,35 @@
   justify-content: space-around;
   align-items: center;
   font-weight: bold;
+  padding: 0 2rem 0 2rem;
 }
 
 .home-image {
   transform: translatey(0px);
-  animation: float 6s ease-in-out infinite;
+  animation: float 10s ease-in-out infinite;
 }
 
 .home-texts {
   display: flex;
   flex-direction: column;
+  width: 50%;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
+  gap: 2rem;
 }
 
 .home-texts h1 {
-  font-size: 10rem;
+  font-size: 6rem;
+  text-align: center;
+  font-weight: 700;
 }
 
 .home-texts h2 {
-  font-size: 7rem;
+  font-size: 4rem;
 }
 
 .companies {
-  background-color: var(--backgroundcolor-contrast);
+  background-color: var(--navbar-color);
   display: flex;
   flex-direction: column;
   padding: 10rem;
@@ -46,6 +50,7 @@
 
 .companies h2 {
   font-size: 4.5rem;
+  color: var(--font-color);
 }
 
 .companies-squares {
@@ -61,7 +66,7 @@
 
 .show-more {
   padding: 1rem;
-  background-color: var(--backgroundcolor);
+  background-color: var(--backgroundcolor-contrast);
   border-radius: 14px;
   font-size: 2.4rem;
 }

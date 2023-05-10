@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/navbar";
 import styles from "@/styles/Home.module.css";
 import engineer from "@/assets/engineer.svg";
+import creative from "@/assets/creative.svg";
 import { companies } from "@/data/companies/companies";
 import Square from "@/components/square";
 import Footer from "@/components/footer";
@@ -16,12 +17,13 @@ export default function Home() {
       <main className={styles.page}>
         <section className={styles.home}>
           <aside id="home" className={styles["home-texts"]}>
-            <h1>DIQ-CP IMT</h1>
+            <h2>CENTRO DE PESQUISAS</h2>
+            <h1>DIVISÃO DE INOVAÇÃO E QUALIDADE</h1>
             <h2>PARCEIRAS</h2>
           </aside>
           <span className={styles["home-image"]}>
             <Image
-              src={engineer}
+              src={creative}
               width={600}
               height={600}
               alt="Lâmpada com homem ao lado"
@@ -48,7 +50,7 @@ export default function Home() {
           </Link>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

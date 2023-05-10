@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 :root {
-  --backgroundcolor: #263238;
-  --backgroundcolor-contrast: #161d20;
-  --font-color: #aabdc7;
+  --backgroundcolor: #fff;
+  --backgroundcolor-contrast: #1c6ab4;
+  --navbar-color: #004587;
+  --font-color: #fff;
   --input-color: #aabdc7;
-  --font-form-color: #ffffff;
+  --font-form-color: #606060;
   --border-radius: 8px;
 }
 
@@ -49,5 +50,5 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: #2c3e50;
+  background-color: var(--backgroundcolor-contrast);
 }
