@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <footer className={styles.component}>
         <p>DIQ-CP IMT 2023</p>
-        <p>Esse site está em constante desenvolvimento | versão abr. 2023</p>
+        <p>Esse site está em constante desenvolvimento | versão maio 2023</p>
       </footer>
     </>
   );

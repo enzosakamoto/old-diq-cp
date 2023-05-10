@@ -3,7 +3,7 @@ import PageName from "@/components/head";
 import Navbar from "@/components/navbar";
 import { sendContactForm } from "@/lib/api";
 import styles from "@/styles/Forms.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -15,8 +15,68 @@ export default function Forms() {
     email: "",
     about: "",
   });
-
   const [loading, setLoading] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [companyError, setCompanyError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
+  useEffect(() => {
+    if (forms.name === "") setNameError(false);
+    else if (Number(forms.name)) setNameError(true);
+    else setNameError(false);
+  }, [forms.name]);
+
+  useEffect(() => {
+    if (forms.company === "") setCompanyError(false);
+    else if (Number(forms.company)) setCompanyError(true);
+    else setCompanyError(false);
+  }, [forms.company]);
+
+  useEffect(() => {
+    if (forms.phone === "") setPhoneError(false);
+    else if (forms.phone.length < 10 || forms.phone.length > 11)
+      setPhoneError(true);
+    else if (!Number(forms.phone)) setPhoneError(true);
+    else setPhoneError(false);
+  }, [forms.phone]);
+
+  useEffect(() => {
+    if (forms.email === "") setEmailError(false);
+    else if (Number(forms.email)) setEmailError(true);
+    else if (!forms.email.includes("@")) setEmailError(true);
+    else if (!forms.email.includes(".")) setEmailError(true);
+    else if (
+      forms.email.includes(" ") ||
+      forms.email.includes(",") ||
+      forms.email.includes("!") ||
+      forms.email.includes("#") ||
+      forms.email.includes("$") ||
+      forms.email.includes("%") ||
+      forms.email.includes("&") ||
+      forms.email.includes("*") ||
+      forms.email.includes("(") ||
+      forms.email.includes(")")
+    )
+      setEmailError(true);
+    else setEmailError(false);
+  }, [forms.email]);
+
+  function handleWarning() {
+    toast.warn("Verifique os campos em vermelho do formulário!", {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      style: {
+        fontSize: "4.5rem",
+      },
+    });
+  }
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -45,7 +105,7 @@ export default function Forms() {
       });
       setLoading(false);
     } catch (error: any) {
-      toast.error("Falha ao enviar o e-mail!", {
+      toast.error("Falha ao enviar o e-mail! Tente novamente.", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,
@@ -78,13 +138,14 @@ export default function Forms() {
         <section className={styles.forms}>
           <article className={styles["forms-inputs"]}>
             <div className={styles["forms-label"]}>
-              <label htmlFor="">Nome</label>
-              <label htmlFor="">Empresa</label>
-              <label htmlFor="">Telefone</label>
-              <label htmlFor="">E-mail</label>
+              <label htmlFor="name">Nome</label>
+              <label htmlFor="company">Empresa</label>
+              <label htmlFor="phone">Telefone</label>
+              <label htmlFor="email">E-mail</label>
             </div>
             <div className={styles["forms-input"]}>
               <input
+                className={nameError ? styles["input-error"] : styles.input}
                 type="text"
                 value={forms.name}
                 onChange={(event) =>
@@ -92,6 +153,7 @@ export default function Forms() {
                 }
               />
               <input
+                className={companyError ? styles["input-error"] : styles.input}
                 type="text"
                 value={forms.company}
                 onChange={(event) =>
@@ -99,14 +161,16 @@ export default function Forms() {
                 }
               />
               <input
+                className={phoneError ? styles["input-error"] : styles.input}
                 type="text"
                 value={forms.phone}
-                placeholder="(xx) xxxxx-xxxx"
-                onChange={(event) =>
-                  setForms({ ...forms, phone: event.target.value })
-                }
+                placeholder="(DDD + número). Ex: 11999999999"
+                onChange={(event) => {
+                  setForms({ ...forms, phone: event.target.value });
+                }}
               />
               <input
+                className={emailError ? styles["input-error"] : styles.input}
                 type="text"
                 value={forms.email}
                 placeholder="exemplo@exemplo.com"
@@ -127,7 +191,11 @@ export default function Forms() {
           </article>
         </section>
         <button
-          onClick={handleSubmit}
+          onClick={
+            nameError || companyError || phoneError || emailError
+              ? handleWarning
+              : handleSubmit
+          }
           className={styles.button}
           disabled={
             !forms.name ||
