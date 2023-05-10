@@ -105,7 +105,7 @@ export default function Forms() {
       });
       setLoading(false);
     } catch (error: any) {
-      toast.error("Falha ao enviar o e-mail!", {
+      toast.error("Falha ao enviar o e-mail! Tente novamente.", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,
