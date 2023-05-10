@@ -24,6 +24,10 @@ import artimar from "@/assets/artimar.png";
 import ascael from "@/assets/ascael.png";
 import ashrae from "@/assets/ashrae.png";
 import aspect from "@/assets/aspect.jpg";
+import americantower from "@/assets/americantower.svg";
+import airtek from "@/assets/airtek.png";
+import amt from "@/assets/amt.png";
+import kapok from "@/assets/kapok.jpg";
 
 export const companies = [
   {
@@ -222,4 +226,74 @@ export const companies = [
     desc: "Alternativas tecnológicas que integrem-se ao fluxo de admissão existente na Instituição - máquina de cartão; assinatura digital; câmera; impressora de pulseira; monitor; dispensador de álcoll em gel; impressora de senha; wi-fi; Nobreak; plataforma.",
     link: "https://www.aspect.com.br",
   },
+  {
+    id: 29,
+    name: "AMERICAN TOWER",
+    image: americantower,
+    desc: "Alugam espaços em torres, oferecemos soluções customizadas, sistemas internos (in building DAS), sistemas externos (outdoor DAS), topo de prédio, conectividade de fibra óptica, uma rede de IoT na tecnologia LoRaWAN™ e serviços que aprimoram a cobertura de redes sem fio.",
+    link: "https://americantower.com.br/pt/index.html",
+  },
+  {
+    id: 30,
+    name: "AIRTEK",
+    image: airtek,
+    desc: "Oferecemos produtos e serviços de engenharia para o tratamento do ar e outros gases.",
+    link: "https://airtek.com.br",
+  },
+  {
+    id: 31,
+    name: "ABGI - Incentivar Consultoria Empresarial Ltda",
+    image: error,
+    desc: "Consultoria com visão das opções de incentivos fiscais e recursos financeiros, buscando as melhores práticas de processos para gestão da inovação e acompanhamento das tendências tecnológicas globais.",
+    link: "/",
+  },
+  {
+    id: 32,
+    name: "AMT - Association For Manufacturing Technology",
+    image: amt,
+    desc: "Empresa de tecnologia de manufatura.",
+    link: "https://www.amtonline.org",
+  },
+  {
+    id: 33,
+    name: "INSTITUTO KAPOK",
+    image: kapok,
+    desc: "Articulamos melhorias do ambiente regulatório da inovação corporativa. Promovemos a troca de conhecimento e experiências entre seus profissionais. Realizamos pesquisas e estudos de seus temas. Divulgamos melhores práticas. Apoiamos projetos em inovação corporativa, em especial, para ICT privados.",
+    link: "https://institutokapok.org",
+  },
+  // {
+  //   id: 34,
+  //   name: "",
+  //   image: error,
+  //   desc: "",
+  //   link: "/",
+  // },
+  // {
+  //   id: 35,
+  //   name: "",
+  //   image: error,
+  //   desc: "",
+  //   link: "/",
+  // },
+  // {
+  //   id: 36,
+  //   name: "",
+  //   image: error,
+  //   desc: "",
+  //   link: "/",
+  // },
+  // {
+  //   id: 37,
+  //   name: "",
+  //   image: error,
+  //   desc: "",
+  //   link: "/",
+  // },
+  // {
+  //   id: 38,
+  //   name: "",
+  //   image: error,
+  //   desc: "",
+  //   link: "/",
+  // },
 ];

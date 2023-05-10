@@ -10,6 +10,16 @@ import Image from "next/image";
 
 export default function CompaniesPage() {
   const [search, setSearch] = useState("");
+  const companiesSort = companies.sort((companyA, companyB) =>
+    compareName(companyA.name, companyB.name)
+  );
+
+  function compareName(companyA: string, companyB: string) {
+    if (companyA < companyB) return -1;
+    else if (companyA > companyB) return 1;
+
+    return 0;
+  }
   return (
     <>
       <PageName
@@ -28,7 +38,7 @@ export default function CompaniesPage() {
         />
         <section className={styles["companies-squares"]}>
           {search === "" ? (
-            companies.map((company) => {
+            companiesSort.map((company) => {
               return (
                 <Square
                   image={company.image}
@@ -38,10 +48,10 @@ export default function CompaniesPage() {
                 />
               );
             })
-          ) : companies.filter((company) =>
+          ) : companiesSort.filter((company) =>
               company.name.toLowerCase().includes(search)
             ).length !== 0 ? (
-            companies
+            companiesSort
               .filter((company) => company.name.toLowerCase().includes(search))
               .map((companySearch) => {
                 return (
