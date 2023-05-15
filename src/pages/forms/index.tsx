@@ -20,47 +20,74 @@ export default function Forms() {
   const [companyError, setCompanyError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [aboutError, setAboutError] = useState(false);
 
   useEffect(() => {
+    const expression_name: RegExp = /^[A-Za-zÀ-ÿ\s']+$/;
     if (forms.name === "") setNameError(false);
-    else if (Number(forms.name)) setNameError(true);
+    else if (!expression_name.test(forms.name)) setNameError(true);
     else setNameError(false);
   }, [forms.name]);
 
   useEffect(() => {
+    const expression_company: RegExp = /^[A-Za-zÀ-ÿ0-9\s]+$/;
     if (forms.company === "") setCompanyError(false);
+    else if (!expression_company.test(forms.company)) setCompanyError(true);
     else if (Number(forms.company)) setCompanyError(true);
     else setCompanyError(false);
   }, [forms.company]);
 
   useEffect(() => {
+    const expression_phone: RegExp = /^[1-9]{2}\d{8,9}$/;
     if (forms.phone === "") setPhoneError(false);
-    else if (forms.phone.length < 10 || forms.phone.length > 11)
-      setPhoneError(true);
-    else if (!Number(forms.phone)) setPhoneError(true);
+    else if (!expression_phone.test(forms.phone)) setPhoneError(true);
     else setPhoneError(false);
   }, [forms.phone]);
 
   useEffect(() => {
+    const expression_email: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (forms.email === "") setEmailError(false);
-    else if (Number(forms.email)) setEmailError(true);
-    else if (!forms.email.includes("@")) setEmailError(true);
-    else if (!forms.email.includes(".")) setEmailError(true);
-    else if (
-      forms.email.includes(" ") ||
-      forms.email.includes(",") ||
-      forms.email.includes("!") ||
-      forms.email.includes("#") ||
-      forms.email.includes("$") ||
-      forms.email.includes("%") ||
-      forms.email.includes("&") ||
-      forms.email.includes("*") ||
-      forms.email.includes("(") ||
-      forms.email.includes(")")
-    )
-      setEmailError(true);
+    else if (!expression_email.test(forms.email)) setEmailError(true);
     else setEmailError(false);
   }, [forms.email]);
+
+  useEffect(() => {
+    if (forms.about === "") setAboutError(false);
+    else if (forms.about.length < 50) setAboutError(true);
+    else setAboutError(false);
+  }, [forms.about]);
+
+  function toastNotify(text: string, option: number) {
+    if (option === 1) {
+      return toast.success(text, {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        style: {
+          fontSize: "4.5rem",
+        },
+      });
+    } else if (option === 0) {
+      return toast.warn(text, {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        style: {
+          fontSize: "4.5rem",
+        },
+      });
+    }
+  }
 
   function handleWarning() {
     toast.warn("Verifique os campos em vermelho do formulário!", {
@@ -90,34 +117,10 @@ export default function Forms() {
         email: "",
         about: "",
       });
-      toast.success("Email enviado com sucesso", {
-        position: "top-center",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        style: {
-          fontSize: "4.5rem",
-        },
-      });
+      toastNotify("E-mail enviado com sucesso!", 1);
       setLoading(false);
     } catch (error: any) {
-      toast.error("Falha ao enviar o e-mail! Tente novamente.", {
-        position: "top-center",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        style: {
-          fontSize: "4.5rem",
-        },
-      });
+      toastNotify("Falha ao enviar o e-mail! Tente novamente.", 0);
       setLoading(false);
     }
   };
@@ -183,6 +186,10 @@ export default function Forms() {
           <article className={styles["forms-big-input"]}>
             <label htmlFor="">Conte-nos um pouco sobre a empresa</label>
             <textarea
+              placeholder="Mínimo de 50 caracteres..."
+              className={
+                aboutError ? styles["big-input-error"] : styles["big-input"]
+              }
               value={forms.about}
               onChange={(event) =>
                 setForms({ ...forms, about: event.target.value })
@@ -192,7 +199,7 @@ export default function Forms() {
         </section>
         <button
           onClick={
-            nameError || companyError || phoneError || emailError
+            nameError || companyError || phoneError || emailError || aboutError
               ? handleWarning
               : handleSubmit
           }
