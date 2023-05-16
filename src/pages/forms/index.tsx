@@ -139,7 +139,7 @@ export default function Forms() {
           <p>Entre em contato conosco</p>
         </section>
         <section className={styles.forms}>
-          <article className={styles["forms-inputs"]}>
+          {/* <article className={styles["forms-inputs"]}>
             <div className={styles["forms-label"]}>
               <label htmlFor="name">Nome</label>
               <label htmlFor="company">Empresa</label>
@@ -172,6 +172,54 @@ export default function Forms() {
                   setForms({ ...forms, phone: event.target.value });
                 }}
               />
+              <input
+                className={emailError ? styles["input-error"] : styles.input}
+                type="text"
+                value={forms.email}
+                placeholder="exemplo@exemplo.com"
+                onChange={(event) =>
+                  setForms({ ...forms, email: event.target.value })
+                }
+              />
+            </div>
+          </article> */}
+          <article className={styles["forms-inputs"]}>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="name">Nome</label>
+              <input
+                className={nameError ? styles["input-error"] : styles.input}
+                type="text"
+                value={forms.name}
+                onChange={(event) =>
+                  setForms({ ...forms, name: event.target.value })
+                }
+              />
+            </div>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="company">Empresa</label>
+              <input
+                className={companyError ? styles["input-error"] : styles.input}
+                type="text"
+                value={forms.company}
+                onChange={(event) =>
+                  setForms({ ...forms, company: event.target.value })
+                }
+              />
+            </div>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="phone">Telefone</label>
+              <input
+                className={phoneError ? styles["input-error"] : styles.input}
+                type="text"
+                value={forms.phone}
+                placeholder="(DDD + número). Ex: 11999999999"
+                onChange={(event) => {
+                  setForms({ ...forms, phone: event.target.value });
+                }}
+              />
+            </div>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="email">E-mail</label>
               <input
                 className={emailError ? styles["input-error"] : styles.input}
                 type="text"
