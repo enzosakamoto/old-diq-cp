@@ -9,7 +9,7 @@ export default function Navbar() {
       <nav className={styles.navbar}>
         <Link href="/">
           <>
-            <Image src={imt} width={134} height={60} alt="Logo do IMT"></Image>
+            <Image className={styles.logo} src={imt} alt="Logo do IMT"></Image>
           </>
         </Link>
         <div className={styles["navbar-links"]}>

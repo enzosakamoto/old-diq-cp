@@ -16,3 +16,30 @@
   font-size: 2rem;
   color: var(--font-color);
 }
+
+@media (max-width: 425px) {
+  .component {
+    padding: 3rem;
+  }
+  .component p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .component {
+    padding: 2.5rem;
+  }
+  .component p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .component {
+    padding: 2rem;
+  }
+  .component p {
+    font-size: 0.75rem;
+  }
+}

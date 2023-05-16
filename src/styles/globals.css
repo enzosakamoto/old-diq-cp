@@ -7,7 +7,6 @@
   --font-color: #fff;
   --input-color: #cfdae0;
   --font-form-color: #606060;
-  --border-radius: 8px;
 }
 
 * {
@@ -27,6 +26,7 @@ body {
   background-color: var(--backgroundcolor);
   color: var(--font-form-color);
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -49,6 +49,5 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  border-radius: 8px;
   background-color: var(--backgroundcolor-contrast);
 }
