@@ -1,0 +1,8 @@
+/* Breakpoints */
+
+laptop-large: 1440px;
+laptop: 1024px;
+tablet: 768px;
+mobile: 425px;
+mobile-small: 375px;
+mobile-smallest: 320px;

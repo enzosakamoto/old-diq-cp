@@ -5,7 +5,9 @@
   justify-content: center;
   height: 100vh;
   gap: 3rem;
-  margin-top: 8vh;
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  padding: 2rem;
 }
 
 .initial-texts {
@@ -28,33 +30,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   gap: 4rem;
 }
 
 .forms-inputs {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
-  width: 50vw;
+  width: 100vw;
 }
 
-.forms-label {
+.forms-row {
   display: flex;
   flex-direction: column;
-  width: 15%;
-  gap: 1.5rem;
-  justify-content: space-evenly;
-}
-
-.forms-label label {
-  font-size: 2.5rem;
-}
-
-.forms-input {
-  display: flex;
-  flex-direction: column;
+  justify-items: center;
+  width: 80%;
   gap: 1rem;
-  width: 85%;
+}
+
+.forms-row label {
+  font-size: 2.5rem;
 }
 
 .input {
@@ -82,7 +80,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: 50vw;
+  width: 80vw;
 }
 
 .forms-big-input label {
@@ -104,7 +102,6 @@
 
 .big-input-error {
   font-size: 2.5rem;
-  width: 100%;
   min-height: 20rem;
   border-radius: 24px;
   background-color: var(--input-color);
@@ -145,4 +142,69 @@
 
 .button:disabled {
   cursor: not-allowed;
+}
+
+@media (max-height: 900px) {
+  .page {
+    height: 120vh;
+  }
+}
+
+@media (max-height: 680px) {
+  .page {
+    height: 150vh;
+  }
+}
+
+@media (max-width: 425px) {
+  .page {
+    padding: 2rem;
+    margin-top: 10vh;
+  }
+
+  .initial-texts h1 {
+    font-size: 4rem;
+  }
+
+  .initial-texts p {
+    font-size: 1.75rem;
+  }
+
+  .forms-row label {
+    font-size: 2rem;
+  }
+
+  .input {
+    font-size: 2rem;
+  }
+
+  .input::placeholder {
+    font-size: 1.75rem;
+  }
+
+  .input-error {
+    font-size: 2rem;
+  }
+
+  .forms-big-input label {
+    font-size: 2rem;
+  }
+
+  .big-input {
+    font-size: 2rem;
+  }
+
+  .big-input::placeholder {
+    font-size: 2rem;
+  }
+
+  .big-input-error {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .initial-texts p {
+    font-size: 1.25rem;
+  }
 }

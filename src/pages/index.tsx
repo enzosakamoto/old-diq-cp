@@ -2,11 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import styles from "@/styles/Home.module.css";
-import engineer from "@/assets/engineer.svg";
 import creative from "@/assets/creative.svg";
 import { companies } from "@/data/companies/companies";
 import Square from "@/components/square";
-import Footer from "@/components/footer";
 import PageName from "@/components/head";
 
 export default function Home() {
@@ -21,14 +19,11 @@ export default function Home() {
             <h1>DIVISÃO DE INOVAÇÃO E QUALIDADE</h1>
             <h2>PARCEIRAS</h2>
           </aside>
-          <span className={styles["home-image"]}>
-            <Image
-              src={creative}
-              width={600}
-              height={600}
-              alt="Lâmpada com homem ao lado"
-            ></Image>
-          </span>
+          <Image
+            className={styles["home-image"]}
+            src={creative}
+            alt="Lâmpada com homem ao lado"
+          ></Image>
         </section>
         <section className={styles.companies}>
           <h2>Principais parceiras</h2>
@@ -50,7 +45,6 @@ export default function Home() {
           </Link>
         </section>
       </main>
-      {/* <Footer /> */}
     </>
   );
 }

@@ -140,13 +140,8 @@ export default function Forms() {
         </section>
         <section className={styles.forms}>
           <article className={styles["forms-inputs"]}>
-            <div className={styles["forms-label"]}>
+            <div className={styles["forms-row"]}>
               <label htmlFor="name">Nome</label>
-              <label htmlFor="company">Empresa</label>
-              <label htmlFor="phone">Telefone</label>
-              <label htmlFor="email">E-mail</label>
-            </div>
-            <div className={styles["forms-input"]}>
               <input
                 className={nameError ? styles["input-error"] : styles.input}
                 type="text"
@@ -155,6 +150,9 @@ export default function Forms() {
                   setForms({ ...forms, name: event.target.value })
                 }
               />
+            </div>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="company">Empresa</label>
               <input
                 className={companyError ? styles["input-error"] : styles.input}
                 type="text"
@@ -163,6 +161,9 @@ export default function Forms() {
                   setForms({ ...forms, company: event.target.value })
                 }
               />
+            </div>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="phone">Telefone</label>
               <input
                 className={phoneError ? styles["input-error"] : styles.input}
                 type="text"
@@ -172,6 +173,9 @@ export default function Forms() {
                   setForms({ ...forms, phone: event.target.value });
                 }}
               />
+            </div>
+            <div className={styles["forms-row"]}>
+              <label htmlFor="email">E-mail</label>
               <input
                 className={emailError ? styles["input-error"] : styles.input}
                 type="text"
