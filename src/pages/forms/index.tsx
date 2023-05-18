@@ -1,19 +1,19 @@
-import Footer from "@/components/footer";
-import PageName from "@/components/head";
-import Navbar from "@/components/navbar";
-import { sendContactForm } from "@/lib/api";
-import styles from "@/styles/Forms.module.css";
-import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Footer from '@/components/footer';
+import PageName from '@/components/head';
+import Navbar from '@/components/navbar';
+import { sendContactForm } from '@/lib/api';
+import styles from '@/styles/Forms.module.css';
+import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Forms() {
   const [forms, setForms] = useState({
-    name: "",
-    company: "",
-    phone: "",
-    email: "",
-    about: "",
+    name: '',
+    company: '',
+    phone: '',
+    email: '',
+    about: ''
   });
   const [loading, setLoading] = useState(false);
   const [nameError, setNameError] = useState(false);
@@ -23,107 +23,110 @@ export default function Forms() {
   const [aboutError, setAboutError] = useState(false);
 
   useEffect(() => {
-    const expression_name: RegExp = /^[A-Za-zÀ-ÿ\s']+$/;
-    if (forms.name === "") setNameError(false);
+    const expression_name = /^[A-Za-zÀ-ÿ\s']+$/;
+    if (forms.name === '') setNameError(false);
     else if (!expression_name.test(forms.name)) setNameError(true);
     else setNameError(false);
   }, [forms.name]);
 
   useEffect(() => {
-    const expression_company: RegExp = /^[A-Za-zÀ-ÿ0-9\s]+$/;
-    if (forms.company === "") setCompanyError(false);
+    const expression_company = /^[A-Za-zÀ-ÿ0-9\s]+$/;
+    if (forms.company === '') setCompanyError(false);
     else if (!expression_company.test(forms.company)) setCompanyError(true);
     else if (Number(forms.company)) setCompanyError(true);
     else setCompanyError(false);
   }, [forms.company]);
 
   useEffect(() => {
-    const expression_phone: RegExp = /^[1-9]{2}\d{8,9}$/;
-    if (forms.phone === "") setPhoneError(false);
+    const expression_phone = /^[1-9]{2}\d{8,9}$/;
+    if (forms.phone === '') setPhoneError(false);
     else if (!expression_phone.test(forms.phone)) setPhoneError(true);
     else setPhoneError(false);
   }, [forms.phone]);
 
   useEffect(() => {
-    const expression_email: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    if (forms.email === "") setEmailError(false);
+    const expression_email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (forms.email === '') setEmailError(false);
     else if (!expression_email.test(forms.email)) setEmailError(true);
     else setEmailError(false);
   }, [forms.email]);
 
   useEffect(() => {
-    if (forms.about === "") setAboutError(false);
+    if (forms.about === '') setAboutError(false);
     else if (forms.about.length < 50) setAboutError(true);
     else setAboutError(false);
   }, [forms.about]);
 
-  function toastNotify(text: string, option: number) {
+  function handleNotify(text: string, option: number) {
     if (option === 1) {
       return toast.success(text, {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 2500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: "colored",
+        theme: 'colored',
         style: {
-          fontSize: "4.5rem",
-        },
+          fontSize: '4.5rem'
+        }
       });
     } else if (option === 0) {
       return toast.warn(text, {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 2500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: "colored",
+        theme: 'colored',
         style: {
-          fontSize: "4.5rem",
-        },
+          fontSize: '4.5rem'
+        }
       });
     }
   }
 
   function handleWarning() {
-    toast.warn("Verifique os campos em vermelho do formulário!", {
-      position: "top-center",
+    toast.warn('Verifique os campos em vermelho do formulário!', {
+      position: 'top-center',
       autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: 'colored',
       style: {
-        fontSize: "4.5rem",
-      },
+        fontSize: '4.5rem'
+      }
     });
   }
 
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
+  async function handleSubmit() {
+    if (nameError || companyError || phoneError || emailError || aboutError) {
+      handleWarning();
+      return;
+    }
     setLoading(true);
     try {
       await sendContactForm(forms);
       setForms({
-        name: "",
-        company: "",
-        phone: "",
-        email: "",
-        about: "",
+        name: '',
+        company: '',
+        phone: '',
+        email: '',
+        about: ''
       });
-      toastNotify("E-mail enviado com sucesso!", 1);
+      handleNotify('E-mail enviado com sucesso!', 1);
       setLoading(false);
-    } catch (error: any) {
-      toastNotify("Falha ao enviar o e-mail! Tente novamente.", 0);
+    } catch (error) {
+      handleNotify('Falha ao enviar o e-mail! Tente novamente.', 0);
       setLoading(false);
     }
-  };
+  }
 
   return (
     <>
@@ -133,17 +136,17 @@ export default function Forms() {
       />
       <Navbar />
       <main className={styles.page}>
-        <section className={styles["initial-texts"]}>
+        <section className={styles['initial-texts']}>
           <h1>Formulário</h1>
           <p>Deseja se tornar um parceiro do IMT?</p>
           <p>Entre em contato conosco</p>
         </section>
         <section className={styles.forms}>
-          <article className={styles["forms-inputs"]}>
-            <div className={styles["forms-row"]}>
+          <article className={styles['forms-inputs']}>
+            <div className={styles['forms-row']}>
               <label htmlFor="name">Nome</label>
               <input
-                className={nameError ? styles["input-error"] : styles.input}
+                className={nameError ? styles['input-error'] : styles.input}
                 type="text"
                 value={forms.name}
                 onChange={(event) =>
@@ -151,10 +154,10 @@ export default function Forms() {
                 }
               />
             </div>
-            <div className={styles["forms-row"]}>
+            <div className={styles['forms-row']}>
               <label htmlFor="company">Empresa</label>
               <input
-                className={companyError ? styles["input-error"] : styles.input}
+                className={companyError ? styles['input-error'] : styles.input}
                 type="text"
                 value={forms.company}
                 onChange={(event) =>
@@ -162,10 +165,10 @@ export default function Forms() {
                 }
               />
             </div>
-            <div className={styles["forms-row"]}>
+            <div className={styles['forms-row']}>
               <label htmlFor="phone">Telefone</label>
               <input
-                className={phoneError ? styles["input-error"] : styles.input}
+                className={phoneError ? styles['input-error'] : styles.input}
                 type="text"
                 value={forms.phone}
                 placeholder="(DDD + número). Ex: 11999999999"
@@ -174,10 +177,10 @@ export default function Forms() {
                 }}
               />
             </div>
-            <div className={styles["forms-row"]}>
+            <div className={styles['forms-row']}>
               <label htmlFor="email">E-mail</label>
               <input
-                className={emailError ? styles["input-error"] : styles.input}
+                className={emailError ? styles['input-error'] : styles.input}
                 type="text"
                 value={forms.email}
                 placeholder="exemplo@exemplo.com"
@@ -187,12 +190,12 @@ export default function Forms() {
               />
             </div>
           </article>
-          <article className={styles["forms-big-input"]}>
+          <article className={styles['forms-big-input']}>
             <label htmlFor="">Conte-nos um pouco sobre a empresa</label>
             <textarea
               placeholder="Mínimo de 50 caracteres..."
               className={
-                aboutError ? styles["big-input-error"] : styles["big-input"]
+                aboutError ? styles['big-input-error'] : styles['big-input']
               }
               value={forms.about}
               onChange={(event) =>
@@ -202,11 +205,7 @@ export default function Forms() {
           </article>
         </section>
         <button
-          onClick={
-            nameError || companyError || phoneError || emailError || aboutError
-              ? handleWarning
-              : handleSubmit
-          }
+          onClick={handleSubmit}
           className={styles.button}
           disabled={
             !forms.name ||
@@ -217,7 +216,7 @@ export default function Forms() {
             loading
           }
         >
-          {loading ? "enviando..." : "enviar"}
+          {loading ? 'enviando...' : 'enviar'}
         </button>
         <ToastContainer />
       </main>

@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import Navbar from "@/components/navbar";
-import styles from "@/styles/Home.module.css";
-import creative from "@/assets/creative.svg";
-import { companies } from "@/data/companies/companies";
-import Square from "@/components/square";
-import PageName from "@/components/head";
+import Link from 'next/link';
+import Image from 'next/image';
+import Navbar from '@/components/navbar';
+import Square from '@/components/square';
+import PageName from '@/components/head';
+import styles from '@/styles/Home.module.css';
+import creative from '@/assets/creative.svg';
+import { companies } from '@/data/companies/companies';
 
 export default function Home() {
   return (
@@ -14,34 +14,34 @@ export default function Home() {
       <Navbar />
       <main className={styles.page}>
         <section className={styles.home}>
-          <aside id="home" className={styles["home-texts"]}>
+          <aside id="home" className={styles['home-texts']}>
             <h2>CENTRO DE PESQUISAS</h2>
             <h1>DIVISÃO DE INOVAÇÃO E QUALIDADE</h1>
             <h2>PARCEIRAS</h2>
           </aside>
           <Image
-            className={styles["home-image"]}
+            className={styles['home-image']}
             src={creative}
             alt="Lâmpada com homem ao lado"
           ></Image>
         </section>
         <section className={styles.companies}>
           <h2>Principais parceiras</h2>
-          <div className={styles["companies-squares"]}>
+          <div className={styles['companies-squares']}>
             {companies.map((company, id) => {
               if (id < 6)
                 return (
                   <Square
                     image={company.image}
                     name={company.name}
-                    id={company.id}
+                    id={company.id.toString()}
                     key={company.id}
                   />
                 );
             })}
           </div>
           <Link href="/companies">
-            <div className={styles["show-more"]}>ver mais</div>
+            <div className={styles['show-more']}>ver mais</div>
           </Link>
         </section>
       </main>
