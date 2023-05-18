@@ -57,7 +57,7 @@
 
 .input {
   font-size: 2.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 24px;
   background-color: var(--input-color);
   padding: 5px 15px 5px 15px;
@@ -66,7 +66,7 @@
 
 .input-error {
   font-size: 2.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 24px;
   background-color: #ff0000;
   color: #fff;
@@ -93,7 +93,7 @@
   min-height: 20rem;
   border-radius: 24px;
   background-color: var(--input-color);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border: none;
   resize: none;
   padding: 10px 20px 10px 20px;
@@ -102,10 +102,11 @@
 
 .big-input-error {
   font-size: 2.5rem;
+  width: 100%;
   min-height: 20rem;
   border-radius: 24px;
   background-color: var(--input-color);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border: none;
   resize: none;
   padding: 10px 20px 10px 20px;
@@ -134,7 +135,7 @@
   border-radius: 14px;
   font-size: 2.4rem;
   border: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   color: var(--font-color);

@@ -1,6 +1,11 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-export default function PageName({ title, content }: any) {
+type PageNameProps = {
+  title: string;
+  content: string;
+};
+
+export default function PageName({ title, content }: PageNameProps) {
   return (
     <>
       <Head>

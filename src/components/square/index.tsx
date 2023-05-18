@@ -1,8 +1,14 @@
-import Image from "next/image";
-import styles from "@/styles/Square.module.css";
-import Link from "next/link";
+import Image, { StaticImageData } from 'next/image';
+import styles from '@/styles/Square.module.css';
+import Link from 'next/link';
 
-export default function Square({ name, image, id }: any) {
+type SquareProps = {
+  name: string;
+  image: StaticImageData;
+  id: string;
+};
+
+export default function Square({ name, image, id }: SquareProps) {
   return (
     <>
       <Link href={`/companies/${id}`}>
