@@ -190,18 +190,104 @@ export default function Forms() {
               />
             </div>
           </article>
+          <div className={styles['forms-checkboxes']}>
+            <p>Quais são os serviços prestados?</p>
+            <div className={styles['checkboxes-texts']}>
+              <div className={styles['checkboxes-texts-div']}>
+                <p>Educacional</p>
+                <div className={styles.checkboxes}>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Trabalhos de Conclusão de Curso
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Iniciação Científica e Tecnológica
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Concursos Acadêmicos
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Pesquisa aplicada - Edital Mauá
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    PAE (Projetos e Atividades Especiais)
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    SMILE (Semana Mauá de Inovação, Liderança e
+                    Empreendedorismo)
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Patrocínios com contrapartida
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Hackathons
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Programa de estágio
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Descontos nos cursos de pós-graduação
+                  </label>
+                </div>
+              </div>
+              <div className={styles['checkboxes-texts-div']}>
+                <p>Empresarial</p>
+                <div className={styles.checkboxes}>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Consultorias
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Pesquisa aplicada
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Treinamentos
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Soluções em ensaios e simulações
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Calibração de instrumentos
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Desenvolvimento de projetos de produtos ou serviços
+                  </label>
+                  <label htmlFor="">
+                    <input type="checkbox" />
+                    Prototipagem rápida
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
           <article className={styles['forms-big-input']}>
-            <label htmlFor="">Conte-nos um pouco sobre a empresa</label>
-            <textarea
-              placeholder="Mínimo de 50 caracteres..."
-              className={
-                aboutError ? styles['big-input-error'] : styles['big-input']
-              }
-              value={forms.about}
-              onChange={(event) =>
-                setForms({ ...forms, about: event.target.value })
-              }
-            ></textarea>
+            <div>
+              <label htmlFor="">Conte-nos um pouco sobre a empresa</label>
+              <textarea
+                placeholder="Mínimo de 50 caracteres..."
+                className={
+                  aboutError ? styles['big-input-error'] : styles['big-input']
+                }
+                value={forms.about}
+                onChange={(event) =>
+                  setForms({ ...forms, about: event.target.value })
+                }
+              ></textarea>
+            </div>
           </article>
         </section>
         <button
