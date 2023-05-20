@@ -149,6 +149,16 @@
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   color: var(--font-color);
+  transition: all 0.2s ease-in;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: var(--font-form-color);
+}
+
+.button:hover:enabled {
+  transform: scale(1.05);
 }
 
 .forms-checkboxes {
