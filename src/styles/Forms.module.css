@@ -3,11 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 150vh;
   gap: 3rem;
   margin-top: 20vh;
   margin-bottom: 10vh;
   padding: 2rem;
+  /* overflow: hidden; */
 }
 
 .initial-texts {
@@ -79,8 +80,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
   width: 80vw;
+}
+
+.forms-big-input div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .forms-big-input label {
@@ -139,28 +149,136 @@
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   color: var(--font-color);
+  transition: all 0.2s ease-in;
 }
 
 .button:disabled {
   cursor: not-allowed;
+  background-color: var(--font-form-color);
 }
 
-@media (max-height: 900px) {
+.button:hover:enabled {
+  transform: scale(1.05);
+}
+
+.forms-checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  gap: 1rem;
+}
+
+.forms-checkboxes-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.forms-checkboxes-info p {
+  font-size: 2.5rem;
+}
+
+.forms-checkboxes-info a {
+  font-size: 1.4rem;
+  color: #fff;
+  border-radius: 128px;
+  padding: 2px 6px 2px 6px;
+  background-color: var(--font-form-color);
+  border: none;
+  cursor: pointer;
+}
+
+.checkboxes-texts {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.checkboxes-texts-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.checkboxes-texts-div p {
+  font-size: 2.2rem;
+}
+
+.checkboxes-information {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.checkboxes label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+}
+
+.checkboxes label input {
+  min-width: 2rem;
+  min-height: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1440px) {
   .page {
-    height: 120vh;
+    height: 160vh;
+  }
+
+  .checkboxes label {
+    font-size: 1.75rem;
+  }
+
+  .checkboxes label input {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 }
 
-@media (max-height: 680px) {
+@media (max-width: 1024px) {
   .page {
-    height: 150vh;
+    height: 200vh;
+  }
+  .checkboxes-texts {
+    flex-direction: column;
+    gap: 	4rem;
+    margin-top: 2rem;
   }
 }
 
-@media (max-width: 425px) {
+@media (max-height: 768px) {
+  .page {
+    height: 220vh;
+  }
+}
+
+@media (max-width: 425px) { 
   .page {
     padding: 2rem;
     margin-top: 10vh;
+    margin-bottom: 0vh;
+    height: 235vh;
   }
 
   .initial-texts h1 {
@@ -202,10 +320,71 @@
   .big-input-error {
     font-size: 2rem;
   }
+
+  .forms-checkboxes p {
+    font-size: 2rem;
+  }
+
+  .checkboxes-texts-div p {
+    font-size: 1.75rem;
+  }
+
+  .checkboxes-information a {
+    font-size: 1.25rem;
+  }
+
+  .checkboxes label {
+    font-size: 1.35rem;
+  }
+
+  .checkboxes label input {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
 }
 
 @media (max-width: 320px) {
+  .page {
+    height: 190vh;
+  }
+
   .initial-texts p {
     font-size: 1.25rem;
   }
+
+  .forms-row label {
+    font-size: 1.75rem;
+  }
+
+  .input {
+    font-size: 1.75rem;
+  }
+
+  .input::placeholder {
+    font-size: 1.5rem;
+  }
+
+  .input-error {
+    font-size: 1.75rem;
+  }
+
+  .forms-big-input label {
+    font-size: 1.75rem;
+  }
+
+  .big-input {
+    font-size: 1.75rem;
+  }
+
+  .big-input::placeholder {
+    font-size: 1.75rem;
+  }
+
+  .big-input-error {
+    font-size: 1.75rem;
+  }
+
+  .button {
+    font-size: 1.75rem;
+  }	
 }

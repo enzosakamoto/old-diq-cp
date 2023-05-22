@@ -11,6 +11,7 @@ const CONTACT_MESSAGE_FIELDS = {
   phone: 'Phone',
   email: 'Email',
   company: 'Company',
+  relations: 'Relations',
   about: 'About'
 };
 
