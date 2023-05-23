@@ -7,35 +7,7 @@ import Link from 'next/link';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-interface Relations {
-  tcc: boolean;
-  icc: boolean;
-  ca: boolean;
-  pam: boolean;
-  pae: boolean;
-  smile: boolean;
-  pat: boolean;
-  hacka: boolean;
-  pe: boolean;
-  desc: boolean;
-  cons: boolean;
-  pa: boolean;
-  trei: boolean;
-  sol: boolean;
-  cal: boolean;
-  dev: boolean;
-  prot: boolean;
-}
-
-interface Forms {
-  name: string;
-  company: string;
-  phone: string;
-  email: string;
-  relations: string[];
-  about: string;
-}
+import { Forms, Relations } from './interfaces';
 
 export default function Forms() {
   const [forms, setForms] = useState<Forms>({

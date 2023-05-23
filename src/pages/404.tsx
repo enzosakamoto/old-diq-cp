@@ -12,7 +12,13 @@ export default function FourOhFour() {
       <Navbar />
       <main className={styles.page}>
         <h1>Página não encontrada!</h1>
-        <Image src={fourohfour} width={400} height={400} alt="Erro 404" />
+        <Image
+          className={styles.image}
+          src={fourohfour}
+          width={400}
+          height={400}
+          alt="Erro 404"
+        />
       </main>
       <Footer />
     </>
