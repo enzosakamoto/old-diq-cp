@@ -37,7 +37,9 @@ import bizup from '@/assets/bizup.png';
 import boomera from '@/assets/boomera.png';
 import autron from '@/assets/autron.png';
 import cargill from '@/assets/cargil.png';
-
+import cbca from '@/assets/cbca.jpg';
+import cepefer from '@/assets/cepefer.png';
+import ceva from '@/assets/ceva.jpg';
 interface Company {
   id: number;
   name: string;
@@ -340,5 +342,47 @@ export const companies: Company[] = [
     image: cargill,
     desc: 'Oferecemos serviços e produtos alimentícios, agrícolas, financeiros e industriais ao mundo. Juntamente com produtores rurais, clientes, governos e comunidades, ajudamos as pessoas a prosperar com a aplicação de nossas ideias há mais de 155 anos. Temos 155.000 funcionários em 70 países, que estão comprometidos a fornecer alimentos ao mundo de uma forma responsável, reduzindo o impacto ambiental e melhorando as comunidades onde atuamos.',
     link: 'https://www.cargill.com.br/pt_BR/início'
+  },
+  {
+    id: 43,
+    name: 'CBCA - Centro Brasileiro de Construção em Aço',
+    image: cbca,
+    desc: 'O CBCA vem juntar-se também aos esforços de organizações nacionais que congregam representantes da indústria local, entidades e profissionais ligados à construção em aço. Ela foi criada sob a forma de "consórcio" tendo o Instituto Aço Brasil como gestor.',
+    link: 'https://www.cbca-acobrasil.org.br/site/'
+  },
+  {
+    id: 44,
+    name: 'CEPEDI - Centro de Pesquisa e Desenvolvimento Tecnológico em Informática e Eletroeletrônica de Ikhéus ',
+    image: error,
+    desc: '',
+    link: '/'
+  },
+  {
+    id: 45,
+    name: 'CEPEFER - Centro de Estudos e Pesquisas Ferroviárias Ltda',
+    image: cepefer,
+    desc: 'Centro universitário.',
+    link: 'https://cepefer.ucam-campos.br'
+  },
+  {
+    id: 46,
+    name: 'CEVA LOGISTIC',
+    image: ceva,
+    desc: '',
+    link: 'https://www.cevalogistics.com/pt-br'
+  },
+  {
+    id: 47,
+    name: '',
+    image: error,
+    desc: '',
+    link: '/'
+  },
+  {
+    id: 48,
+    name: '',
+    image: error,
+    desc: '',
+    link: '/'
   }
 ];
