@@ -37,14 +37,10 @@ export default function Company() {
             </aside>
           </Link>
           <article className={styles['company-texts']}>
-            <h1>{company?.name}</h1>
+            <h1>{company?.name ? company.name : 'Não informado'}</h1>
             <div className={styles['company-activities']}>
               <h2>Segmento de atuação</h2>
-              {company?.desc ? (
-                <span>{company?.desc}</span>
-              ) : (
-                <span>Não informado</span>
-              )}
+              <span>{company?.desc ? company.desc : 'Não informado'}</span>
             </div>
           </article>
         </section>

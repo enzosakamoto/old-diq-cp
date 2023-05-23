@@ -272,11 +272,11 @@ export const companies: Company[] = [
   }
   // {
   //   id: 34,
-  //   name: "",
+  //   name: '',
   //   image: error,
-  //   desc: "",
-  //   link: "/",
-  // },
+  //   desc: '',
+  //   link: '/'
+  // }
   // {
   //   id: 35,
   //   name: "",
