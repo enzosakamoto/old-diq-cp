@@ -40,6 +40,11 @@ import cargill from '@/assets/cargil.png';
 import cbca from '@/assets/cbca.jpg';
 import cepefer from '@/assets/cepefer.png';
 import ceva from '@/assets/ceva.jpg';
+import chemours from '@/assets/chemours.png';
+import chrompack from '@/assets/chrompack.png';
+import ciesp from '@/assets/ciesp.jpg';
+import cmp from '@/assets/cmp.png';
+
 interface Company {
   id: number;
   name: string;
@@ -373,16 +378,30 @@ export const companies: Company[] = [
   },
   {
     id: 47,
-    name: '',
-    image: error,
-    desc: '',
-    link: '/'
+    name: 'CHEMOURS',
+    image: chemours,
+    desc: 'A Chemours é um tipo diferente de empresa química, impulsionada pelo propósito de criar um mundo melhor por meio do poder da química. Com um portfólio de classe mundial, fornecemos soluções para setores que vão desde automotivo, tintas e laminados até eletrônicos avançados, construção, energia e telecomunicações, ajudando a tornar o mundo mais colorido, capaz e mais limpo.',
+    link: 'https://www.chemours.com/en'
   },
   {
     id: 48,
-    name: '',
-    image: error,
-    desc: '',
-    link: '/'
+    name: 'CHROMPACK',
+    image: chrompack,
+    desc: 'Fornecedor de equipamentos para o setor petrolífero em São Paulo.',
+    link: 'https://chrompack.com.br'
+  },
+  {
+    id: 49,
+    name: 'CIESP - Centro das Indústrias do Estado de São Paulo',
+    image: ciesp,
+    desc: 'Centro das Indústrias do Estado de São Paulo é uma associação privada que apoia e representa os interesses das Indústrias paulistas junto à sociedade e o governo.',
+    link: 'https://www.ciesp.com.br'
+  },
+  {
+    id: 50,
+    name: 'CMP - Companhia Metalgraphica Paulista',
+    image: cmp,
+    desc: 'Atuamos no mercado de latas para químicos e alimentos, com os mais variados segmentos, mantendo as especificações e necessidades de cada aplicação, oferecendo também projetos de litografia com tecnologia de ponta. Contamos com uma equipe capacitada e motivada, com atendimento rápido e eficiente, considerando às necessidades e expectativas de nossos clientes.',
+    link: 'https://www.cmp.ind.br'
   }
 ];
