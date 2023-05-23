@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import abb from '@/assets/abb.png';
 import abceram from '@/assets/abceram.png';
 import abece from '@/assets/abece.jpg';
@@ -28,14 +29,21 @@ import americantower from '@/assets/americantower.svg';
 import airtek from '@/assets/airtek.png';
 import amt from '@/assets/amt.png';
 import kapok from '@/assets/kapok.jpg';
-import { StaticImageData } from 'next/image';
+import attus from '@/assets/attus.jpg';
+import grob from '@/assets/grob.jpg';
+import bestinclass from '@/assets/bestinclass.png';
+import bioseta from '@/assets/bioseta.png';
+import bizup from '@/assets/bizup.png';
+import boomera from '@/assets/boomera.png';
+import autron from '@/assets/autron.png';
+import cargill from '@/assets/cargil.png';
 
 interface Company {
   id: number;
   name: string;
   image: StaticImageData;
   desc: string;
-  link?: string;
+  link: string;
 }
 
 export const companies: Company[] = [
@@ -269,40 +277,68 @@ export const companies: Company[] = [
     image: kapok,
     desc: 'Articulamos melhorias do ambiente regulatório da inovação corporativa. Promovemos a troca de conhecimento e experiências entre seus profissionais. Realizamos pesquisas e estudos de seus temas. Divulgamos melhores práticas. Apoiamos projetos em inovação corporativa, em especial, para ICT privados.',
     link: 'https://institutokapok.org'
+  },
+  {
+    id: 34,
+    name: 'ASTRO ABC INDÚSTRIA E COMÉRCIO LTDA',
+    desc: '',
+    image: error,
+    link: '/'
+  },
+  {
+    id: 35,
+    name: 'ATTUS TECNOLOGIA EM TELECOMUNICAÇÕES LTDA',
+    image: attus,
+    desc: 'Oferecem soluções em telecomunicações com tecnologia avançada e inovadora, com muita flexibilidade.',
+    link: 'https://attustelecom.com.br'
+  },
+  {
+    id: 36,
+    name: 'B. GROB',
+    image: grob,
+    desc: 'É a mais antiga e a terceira maior fábrica do Grupo GROB, produzindo há mais de 60 anos máquinas para a indústria nacional e internacional de acordo com o padrão alemão. A produção de equipamentos de sistemas e de máquinas universais da mais alta qualidade é assegurada por mais de 550 trabalhadores em uma área de produção superior a 34.000 metros quadrados.',
+    link: 'https://www.linkedin.com/company/bgrobdobrasil/?originalSubdomain=br'
+  },
+  {
+    id: 37,
+    name: 'BEST IN CLASS',
+    image: bestinclass,
+    desc: 'É uma empresa com mais de 12 anos de experiência no mercado, fornecendo serviços de locação e produtos da mais alta qualidade para todos os segmentos. Com uma equipe altamente capacitada, buscamos constantemente a excelência, garantindo o mais alto padrão de qualidade para nossos clientes.',
+    link: 'https://www.bestinclass.com.br'
+  },
+  {
+    id: 38,
+    name: 'BIOSETA',
+    image: bioseta,
+    desc: 'É uma empresa que atua há mais de 30 anos em serviços essenciais para o equilíbrio e harmonia do desenvolvimento econômico, social e ambiental, abrangendo áreas como saúde ambiental, água, higienização, tratamento fitossanitário e resíduos.',
+    link: 'https://www.bioseta.com.br'
+  },
+  {
+    id: 39,
+    name: 'BIZUP',
+    image: bizup,
+    desc: 'Visa transformar o mercado de consultoria estratégica, por meio de conhecimento da indústria e estratégia de crescimento aplicados ao negócio.',
+    link: 'https://www.bizupstrategy.com'
+  },
+  {
+    id: 40,
+    name: 'BOOMERA',
+    image: boomera,
+    desc: 'Empresa especialista em Economia Circular do início ao início. Transformamos resíduo em matéria-prima para produtos surpreendentes.',
+    link: 'https://boomera.com.br'
+  },
+  {
+    id: 41,
+    name: 'C+ TECNOLOGIA (AUTRON)',
+    image: autron,
+    desc: 'Somos uma equipe de profissionais focados em prover soluções inovadoras e com um alto valor agregado, com atuação nacional e internacional, assegurando aos nossos clientes significativos ganhos.',
+    link: 'https://www.autron.com.br'
+  },
+  {
+    id: 42,
+    name: 'CARGILL',
+    image: cargill,
+    desc: 'Oferecemos serviços e produtos alimentícios, agrícolas, financeiros e industriais ao mundo. Juntamente com produtores rurais, clientes, governos e comunidades, ajudamos as pessoas a prosperar com a aplicação de nossas ideias há mais de 155 anos. Temos 155.000 funcionários em 70 países, que estão comprometidos a fornecer alimentos ao mundo de uma forma responsável, reduzindo o impacto ambiental e melhorando as comunidades onde atuamos.',
+    link: 'https://www.cargill.com.br/pt_BR/início'
   }
-  // {
-  //   id: 34,
-  //   name: '',
-  //   image: error,
-  //   desc: '',
-  //   link: '/'
-  // }
-  // {
-  //   id: 35,
-  //   name: "",
-  //   image: error,
-  //   desc: "",
-  //   link: "/",
-  // },
-  // {
-  //   id: 36,
-  //   name: "",
-  //   image: error,
-  //   desc: "",
-  //   link: "/",
-  // },
-  // {
-  //   id: 37,
-  //   name: "",
-  //   image: error,
-  //   desc: "",
-  //   link: "/",
-  // },
-  // {
-  //   id: 38,
-  //   name: "",
-  //   image: error,
-  //   desc: "",
-  //   link: "/",
-  // },
 ];
