@@ -4,7 +4,7 @@ import Navbar from '@/components/navbar';
 import { sendContactForm } from '@/lib/api';
 import styles from '@/styles/Forms.module.css';
 import Link from 'next/link';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -163,7 +163,8 @@ export default function Forms() {
     });
   }
 
-  async function handleSubmit() {
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
     if (nameError || companyError || phoneError || emailError || aboutError) {
       handleWarning();
       return;
@@ -244,7 +245,7 @@ export default function Forms() {
         content="Página de formulário para se tornar um parceiro do IMT"
       />
       <Navbar />
-      <main className={styles.page}>
+      <form className={styles.page} onSubmit={handleSubmit}>
         <section className={styles['initial-texts']}>
           <h1>Formulário</h1>
           <p>Deseja se tornar um parceiro do IMT?</p>
@@ -509,7 +510,7 @@ export default function Forms() {
           {loading ? 'enviando...' : 'enviar'}
         </button>
         <ToastContainer />
-      </main>
+      </form>
       <Footer />
     </>
   );
