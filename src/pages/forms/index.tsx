@@ -75,31 +75,31 @@ export default function Forms() {
   const [aboutError, setAboutError] = useState(false);
 
   useEffect(() => {
-    const expression_name = /^[A-Za-zÀ-ÿ\s']+$/;
+    const expressionName = /^[A-Za-zÀ-ÿ\s']+$/;
     if (forms.name === '') setNameError(false);
-    else if (!expression_name.test(forms.name)) setNameError(true);
+    else if (!expressionName.test(forms.name)) setNameError(true);
     else setNameError(false);
   }, [forms.name]);
 
   useEffect(() => {
-    const expression_company = /^[A-Za-zÀ-ÿ0-9\s]+$/;
+    const expressionCompany = /^[A-Za-zÀ-ÿ0-9\s]+$/;
     if (forms.company === '') setCompanyError(false);
-    else if (!expression_company.test(forms.company)) setCompanyError(true);
+    else if (!expressionCompany.test(forms.company)) setCompanyError(true);
     else if (Number(forms.company)) setCompanyError(true);
     else setCompanyError(false);
   }, [forms.company]);
 
   useEffect(() => {
-    const expression_phone = /^[1-9]{2}\d{8,9}$/;
+    const expressionPhone = /^[1-9]{2}\d{8,9}$/;
     if (forms.phone === '') setPhoneError(false);
-    else if (!expression_phone.test(forms.phone)) setPhoneError(true);
+    else if (!expressionPhone.test(forms.phone)) setPhoneError(true);
     else setPhoneError(false);
   }, [forms.phone]);
 
   useEffect(() => {
-    const expression_email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const expressionEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (forms.email === '') setEmailError(false);
-    else if (!expression_email.test(forms.email)) setEmailError(true);
+    else if (!expressionEmail.test(forms.email)) setEmailError(true);
     else setEmailError(false);
   }, [forms.email]);
 
