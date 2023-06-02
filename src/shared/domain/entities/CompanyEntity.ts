@@ -1,9 +1,9 @@
 export class CompanyEntity {
-  public name: string;
-  public image: string;
-  public desc: string;
-  public link: string;
-  public contact?: string;
+  public name: string
+  public image: string
+  public desc: string
+  public link: string
+  public contact?: string
 
   constructor(
     name: string,
@@ -12,10 +12,10 @@ export class CompanyEntity {
     link: string,
     contact?: string
   ) {
-    this.name = name;
-    this.image = image;
-    this.desc = desc;
-    this.link = link;
-    this.contact = contact;
+    this.name = name
+    this.image = image
+    this.desc = desc
+    this.link = link
+    this.contact = contact
   }
 }

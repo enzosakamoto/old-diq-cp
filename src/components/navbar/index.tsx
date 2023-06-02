@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from '@/styles/Navbar.module.css';
-import imt from '@/assets/imt.svg';
+import Link from 'next/link'
+import Image from 'next/image'
+import styles from '@/styles/Navbar.module.css'
+import imt from '@/assets/imt.svg'
 
 export default function Navbar() {
   return (
@@ -18,5 +18,5 @@ export default function Navbar() {
         </div>
       </nav>
     </>
-  );
+  )
 }

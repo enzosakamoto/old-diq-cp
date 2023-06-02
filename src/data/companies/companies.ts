@@ -1,56 +1,56 @@
-import { StaticImageData } from 'next/image';
-import abb from '@/assets/abb.png';
-import abceram from '@/assets/abceram.png';
-import abece from '@/assets/abece.jpg';
-import abendi from '@/assets/abendi.png';
-import abia from '@/assets/abia.jpg';
-import abichama from '@/assets/abichama.jpg';
-import abimaq from '@/assets/abimaq.jpg';
-import aboutsolution from '@/assets/aboutsolution.jpg';
-import abralimp from '@/assets/abralimp.png';
-import adn from '@/assets/adn.png';
-import advantech from '@/assets/advantech.jpg';
-import afip from '@/assets/afip.jpg';
-import error from '@/assets/error.svg';
-import agrothings from '@/assets/agrothings.png';
-import i2a2 from '@/assets/i2a2.png';
-import ai4 from '@/assets/ai4.png';
-import alberteinstein from '@/assets/alberteinstein.png';
-import alianca from '@/assets/alianca.jpg';
-import amazonas from '@/assets/amazonas.png';
-import anbima from '@/assets/anbima.png';
-import anhanguera from '@/assets/anhanguera.jpg';
-import ariston from '@/assets/ariston.png';
-import artimar from '@/assets/artimar.png';
-import ascael from '@/assets/ascael.png';
-import ashrae from '@/assets/ashrae.png';
-import aspect from '@/assets/aspect.jpg';
-import americantower from '@/assets/americantower.svg';
-import airtek from '@/assets/airtek.png';
-import amt from '@/assets/amt.png';
-import kapok from '@/assets/kapok.jpg';
-import attus from '@/assets/attus.jpg';
-import grob from '@/assets/grob.jpg';
-import bestinclass from '@/assets/bestinclass.png';
-import bioseta from '@/assets/bioseta.png';
-import bizup from '@/assets/bizup.png';
-import boomera from '@/assets/boomera.png';
-import autron from '@/assets/autron.png';
-import cargill from '@/assets/cargil.png';
-import cbca from '@/assets/cbca.jpg';
-import cepefer from '@/assets/cepefer.png';
-import ceva from '@/assets/ceva.jpg';
-import chemours from '@/assets/chemours.png';
-import chrompack from '@/assets/chrompack.png';
-import ciesp from '@/assets/ciesp.jpg';
-import cmp from '@/assets/cmp.png';
+import { StaticImageData } from 'next/image'
+import abb from '@/assets/abb.png'
+import abceram from '@/assets/abceram.png'
+import abece from '@/assets/abece.jpg'
+import abendi from '@/assets/abendi.png'
+import abia from '@/assets/abia.jpg'
+import abichama from '@/assets/abichama.jpg'
+import abimaq from '@/assets/abimaq.jpg'
+import aboutsolution from '@/assets/aboutsolution.jpg'
+import abralimp from '@/assets/abralimp.png'
+import adn from '@/assets/adn.png'
+import advantech from '@/assets/advantech.jpg'
+import afip from '@/assets/afip.jpg'
+import error from '@/assets/error.svg'
+import agrothings from '@/assets/agrothings.png'
+import i2a2 from '@/assets/i2a2.png'
+import ai4 from '@/assets/ai4.png'
+import alberteinstein from '@/assets/alberteinstein.png'
+import alianca from '@/assets/alianca.jpg'
+import amazonas from '@/assets/amazonas.png'
+import anbima from '@/assets/anbima.png'
+import anhanguera from '@/assets/anhanguera.jpg'
+import ariston from '@/assets/ariston.png'
+import artimar from '@/assets/artimar.png'
+import ascael from '@/assets/ascael.png'
+import ashrae from '@/assets/ashrae.png'
+import aspect from '@/assets/aspect.jpg'
+import americantower from '@/assets/americantower.svg'
+import airtek from '@/assets/airtek.png'
+import amt from '@/assets/amt.png'
+import kapok from '@/assets/kapok.jpg'
+import attus from '@/assets/attus.jpg'
+import grob from '@/assets/grob.jpg'
+import bestinclass from '@/assets/bestinclass.png'
+import bioseta from '@/assets/bioseta.png'
+import bizup from '@/assets/bizup.png'
+import boomera from '@/assets/boomera.png'
+import autron from '@/assets/autron.png'
+import cargill from '@/assets/cargil.png'
+import cbca from '@/assets/cbca.jpg'
+import cepefer from '@/assets/cepefer.png'
+import ceva from '@/assets/ceva.jpg'
+import chemours from '@/assets/chemours.png'
+import chrompack from '@/assets/chrompack.png'
+import ciesp from '@/assets/ciesp.jpg'
+import cmp from '@/assets/cmp.png'
 
 interface Company {
-  id: number;
-  name: string;
-  image: StaticImageData;
-  desc: string;
-  link: string;
+  id: number
+  name: string
+  image: StaticImageData
+  desc: string
+  link: string
 }
 
 export const companies: Company[] = [
@@ -404,4 +404,4 @@ export const companies: Company[] = [
     desc: 'Atuamos no mercado de latas para químicos e alimentos, com os mais variados segmentos, mantendo as especificações e necessidades de cada aplicação, oferecendo também projetos de litografia com tecnologia de ponta. Contamos com uma equipe capacitada e motivada, com atendimento rápido e eficiente, considerando às necessidades e expectativas de nossos clientes.',
     link: 'https://www.cmp.ind.br'
   }
-];
+]

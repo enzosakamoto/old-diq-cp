@@ -1,40 +1,40 @@
-import Footer from '@/components/footer';
-import PageName from '@/components/head';
-import Navbar from '@/components/navbar';
-import { sendContactForm } from '@/lib/api';
-import styles from '@/styles/Forms.module.css';
-import Link from 'next/link';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Footer from '@/components/footer'
+import PageName from '@/components/head'
+import Navbar from '@/components/navbar'
+import { sendContactForm } from '@/lib/api'
+import styles from '@/styles/Forms.module.css'
+import Link from 'next/link'
+import { ChangeEvent, useEffect, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export interface Relations {
-  tcc: boolean;
-  icc: boolean;
-  ca: boolean;
-  pam: boolean;
-  pae: boolean;
-  smile: boolean;
-  pat: boolean;
-  hacka: boolean;
-  pe: boolean;
-  desc: boolean;
-  cons: boolean;
-  pa: boolean;
-  trei: boolean;
-  sol: boolean;
-  cal: boolean;
-  dev: boolean;
-  prot: boolean;
+  tcc: boolean
+  icc: boolean
+  ca: boolean
+  pam: boolean
+  pae: boolean
+  smile: boolean
+  pat: boolean
+  hacka: boolean
+  pe: boolean
+  desc: boolean
+  cons: boolean
+  pa: boolean
+  trei: boolean
+  sol: boolean
+  cal: boolean
+  dev: boolean
+  prot: boolean
 }
 
 export interface Forms {
-  name: string;
-  company: string;
-  phone: string;
-  email: string;
-  relations: string[];
-  about: string;
+  name: string
+  company: string
+  phone: string
+  email: string
+  relations: string[]
+  about: string
 }
 
 export default function Forms() {
@@ -45,7 +45,7 @@ export default function Forms() {
     email: '',
     relations: [],
     about: ''
-  });
+  })
 
   const [relations, setRelations] = useState<Relations>({
     tcc: false,
@@ -65,54 +65,54 @@ export default function Forms() {
     cal: false,
     dev: false,
     prot: false
-  });
+  })
 
-  const [loading, setLoading] = useState(false);
-  const [nameError, setNameError] = useState(false);
-  const [companyError, setCompanyError] = useState(false);
-  const [phoneError, setPhoneError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [aboutError, setAboutError] = useState(false);
-
-  useEffect(() => {
-    const expressionName = /^[A-Za-zÀ-ÿ\s']+$/;
-    if (forms.name === '') setNameError(false);
-    else if (!expressionName.test(forms.name)) setNameError(true);
-    else setNameError(false);
-  }, [forms.name]);
+  const [loading, setLoading] = useState(false)
+  const [nameError, setNameError] = useState(false)
+  const [companyError, setCompanyError] = useState(false)
+  const [phoneError, setPhoneError] = useState(false)
+  const [emailError, setEmailError] = useState(false)
+  const [aboutError, setAboutError] = useState(false)
 
   useEffect(() => {
-    const expressionCompany = /^[A-Za-zÀ-ÿ0-9\s]+$/;
-    if (forms.company === '') setCompanyError(false);
-    else if (!expressionCompany.test(forms.company)) setCompanyError(true);
-    else if (Number(forms.company)) setCompanyError(true);
-    else setCompanyError(false);
-  }, [forms.company]);
+    const expressionName = /^[A-Za-zÀ-ÿ\s']+$/
+    if (forms.name === '') setNameError(false)
+    else if (!expressionName.test(forms.name)) setNameError(true)
+    else setNameError(false)
+  }, [forms.name])
 
   useEffect(() => {
-    const expressionPhone = /^[1-9]{2}\d{8,9}$/;
-    if (forms.phone === '') setPhoneError(false);
-    else if (!expressionPhone.test(forms.phone)) setPhoneError(true);
-    else setPhoneError(false);
-  }, [forms.phone]);
+    const expressionCompany = /^[A-Za-zÀ-ÿ0-9\s]+$/
+    if (forms.company === '') setCompanyError(false)
+    else if (!expressionCompany.test(forms.company)) setCompanyError(true)
+    else if (Number(forms.company)) setCompanyError(true)
+    else setCompanyError(false)
+  }, [forms.company])
 
   useEffect(() => {
-    const expressionEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    if (forms.email === '') setEmailError(false);
-    else if (!expressionEmail.test(forms.email)) setEmailError(true);
-    else setEmailError(false);
-  }, [forms.email]);
+    const expressionPhone = /^[1-9]{2}\d{8,9}$/
+    if (forms.phone === '') setPhoneError(false)
+    else if (!expressionPhone.test(forms.phone)) setPhoneError(true)
+    else setPhoneError(false)
+  }, [forms.phone])
 
   useEffect(() => {
-    if (forms.about === '') setAboutError(false);
-    else if (forms.about.length < 50) setAboutError(true);
-    else setAboutError(false);
-  }, [forms.about]);
+    const expressionEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+    if (forms.email === '') setEmailError(false)
+    else if (!expressionEmail.test(forms.email)) setEmailError(true)
+    else setEmailError(false)
+  }, [forms.email])
+
+  useEffect(() => {
+    if (forms.about === '') setAboutError(false)
+    else if (forms.about.length < 50) setAboutError(true)
+    else setAboutError(false)
+  }, [forms.about])
 
   function handleChecked(event: ChangeEvent<HTMLInputElement>) {
-    const { name, checked } = event.target;
-    setRelations({ ...relations, [name]: checked });
-    console.log(relations);
+    const { name, checked } = event.target
+    setRelations({ ...relations, [name]: checked })
+    console.log(relations)
   }
 
   function handleNotify(text: string, option: number) {
@@ -129,7 +129,7 @@ export default function Forms() {
         style: {
           fontSize: '4.5rem'
         }
-      });
+      })
     } else if (option === 0) {
       return toast.warn(text, {
         position: 'top-center',
@@ -143,7 +143,7 @@ export default function Forms() {
         style: {
           fontSize: '4.5rem'
         }
-      });
+      })
     }
   }
 
@@ -160,48 +160,48 @@ export default function Forms() {
       style: {
         fontSize: '4.5rem'
       }
-    });
+    })
   }
 
   async function handleSubmit() {
     if (nameError || companyError || phoneError || emailError || aboutError) {
-      handleWarning();
-      return;
+      handleWarning()
+      return
     }
     Object.keys(relations).forEach((key) => {
       if (relations[key as keyof typeof relations]) {
         if (key === 'tcc')
-          forms.relations.push('Trabalho de Conclusão de Curso');
+          forms.relations.push('Trabalho de Conclusão de Curso')
         else if (key === 'icc')
-          forms.relations.push('Iniciação Científica e Tecnológica');
-        else if (key === 'ca') forms.relations.push('Concursos Acadêmicos');
+          forms.relations.push('Iniciação Científica e Tecnológica')
+        else if (key === 'ca') forms.relations.push('Concursos Acadêmicos')
         else if (key === 'pam')
-          forms.relations.push('Pesquisa aplicada - Edital Mauá');
-        else if (key === 'pae') forms.relations.push('PAE');
-        else if (key === 'smile') forms.relations.push('SMILE');
+          forms.relations.push('Pesquisa aplicada - Edital Mauá')
+        else if (key === 'pae') forms.relations.push('PAE')
+        else if (key === 'smile') forms.relations.push('SMILE')
         else if (key === 'pat')
-          forms.relations.push('Patrocínios com contrapartida');
-        else if (key === 'hacka') forms.relations.push('Hackathon');
-        else if (key === 'pe') forms.relations.push('Programa de estágio');
+          forms.relations.push('Patrocínios com contrapartida')
+        else if (key === 'hacka') forms.relations.push('Hackathon')
+        else if (key === 'pe') forms.relations.push('Programa de estágio')
         else if (key === 'desc')
-          forms.relations.push('Descontos nos cursos de pós-graduação');
-        else if (key === 'cons') forms.relations.push('Consultorias');
-        else if (key === 'pa') forms.relations.push('Pesquisa aplicada');
-        else if (key === 'trei') forms.relations.push('Treinamentos');
+          forms.relations.push('Descontos nos cursos de pós-graduação')
+        else if (key === 'cons') forms.relations.push('Consultorias')
+        else if (key === 'pa') forms.relations.push('Pesquisa aplicada')
+        else if (key === 'trei') forms.relations.push('Treinamentos')
         else if (key === 'sol')
-          forms.relations.push('Soluções em ensaios e simulações');
+          forms.relations.push('Soluções em ensaios e simulações')
         else if (key === 'cal')
-          forms.relations.push('Calibração de instrumentos');
+          forms.relations.push('Calibração de instrumentos')
         else if (key === 'dev')
           forms.relations.push(
             'Desenvolvimento de projetos de produtos ou serviços'
-          );
-        else if (key === 'prot') forms.relations.push('Prototipagem rápida');
+          )
+        else if (key === 'prot') forms.relations.push('Prototipagem rápida')
       }
-    });
-    setLoading(true);
+    })
+    setLoading(true)
     try {
-      await sendContactForm(forms);
+      await sendContactForm(forms)
       setForms({
         name: '',
         company: '',
@@ -209,7 +209,7 @@ export default function Forms() {
         email: '',
         relations: [],
         about: ''
-      });
+      })
       setRelations({
         tcc: false,
         icc: false,
@@ -228,12 +228,12 @@ export default function Forms() {
         cal: false,
         dev: false,
         prot: false
-      });
-      handleNotify('E-mail enviado com sucesso!', 1);
-      setLoading(false);
+      })
+      handleNotify('E-mail enviado com sucesso!', 1)
+      setLoading(false)
     } catch (error) {
-      handleNotify('Falha ao enviar o e-mail! Tente novamente.', 0);
-      setLoading(false);
+      handleNotify('Falha ao enviar o e-mail! Tente novamente.', 0)
+      setLoading(false)
     }
   }
 
@@ -282,7 +282,7 @@ export default function Forms() {
                 value={forms.phone}
                 placeholder="(DDD + número). Ex: 11999999999"
                 onChange={(event) => {
-                  setForms({ ...forms, phone: event.target.value });
+                  setForms({ ...forms, phone: event.target.value })
                 }}
               />
             </div>
@@ -512,5 +512,5 @@ export default function Forms() {
       </main>
       <Footer />
     </>
-  );
+  )
 }

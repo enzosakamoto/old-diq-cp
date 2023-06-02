@@ -1,9 +1,9 @@
-import Head from 'next/head';
+import Head from 'next/head'
 
 type PageNameProps = {
-  title: string;
-  content: string;
-};
+  title: string
+  content: string
+}
 
 export default function PageName({ title, content }: PageNameProps) {
   return (
@@ -13,5 +13,5 @@ export default function PageName({ title, content }: PageNameProps) {
         <meta name="description" content={content} />
       </Head>
     </>
-  );
+  )
 }
