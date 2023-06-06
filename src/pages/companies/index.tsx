@@ -1,24 +1,24 @@
-import Footer from '@/components/footer';
-import PageName from '@/components/head';
-import Navbar from '@/components/navbar';
-import Square from '@/components/square';
-import { companies } from '@/data/companies/companies';
-import styles from '@/styles/Companies.module.css';
-import { useState } from 'react';
-import nodata from '@/assets/nodata.svg';
-import Image from 'next/image';
+import Footer from '@/components/footer'
+import PageName from '@/components/head'
+import Navbar from '@/components/navbar'
+import Square from '@/components/square'
+import { companies } from '@/data/companies/companies'
+import styles from '@/styles/Companies.module.css'
+import { useState } from 'react'
+import nodata from '@/assets/nodata.svg'
+import Image from 'next/image'
 
 export default function CompaniesPage() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('')
   const companiesSort = companies.sort((companyA, companyB) =>
     compareName(companyA.name, companyB.name)
-  );
+  )
 
   function compareName(companyA: string, companyB: string) {
-    if (companyA < companyB) return -1;
-    else if (companyA > companyB) return 1;
+    if (companyA < companyB) return -1
+    else if (companyA > companyB) return 1
 
-    return 0;
+    return 0
   }
   return (
     <>
@@ -33,7 +33,7 @@ export default function CompaniesPage() {
           type="text"
           placeholder="Pesquisar..."
           onChange={(event) => {
-            setSearch(event.target.value.toLowerCase());
+            setSearch(event.target.value.toLowerCase())
           }}
         />
         <section className={styles['companies-squares']}>
@@ -46,7 +46,7 @@ export default function CompaniesPage() {
                   id={company.id.toString()}
                   key={company.id}
                 />
-              );
+              )
             })
           ) : companiesSort.filter((company) =>
               company.name.toLowerCase().includes(search)
@@ -61,7 +61,7 @@ export default function CompaniesPage() {
                     id={companySearch.id.toString()}
                     key={companySearch.id}
                   />
-                );
+                )
               })
           ) : (
             <>
@@ -76,5 +76,5 @@ export default function CompaniesPage() {
       </main>
       <Footer />
     </>
-  );
+  )
 }

@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer'
 
-const email = process.env.EMAIL;
-const pass = process.env.EMAIL_PASS;
+const email = process.env.EMAIL
+const pass = process.env.EMAIL_PASS
 
 export const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -10,9 +10,9 @@ export const transporter = nodemailer.createTransport({
     user: email,
     pass
   }
-});
+})
 
 export const mailOptions = {
   from: email,
   to: email
-};
+}

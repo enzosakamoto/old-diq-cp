@@ -1,18 +1,18 @@
-import Navbar from '@/components/navbar';
-import styles from '@/styles/Company.module.css';
-import { companies } from '@/data/companies/companies';
-import Image from 'next/image';
-import Link from 'next/link';
-import Footer from '@/components/footer';
-import PageName from '@/components/head';
-import { useRouter } from 'next/router';
-import error from '@/assets/error.svg';
+import Navbar from '@/components/navbar'
+import styles from '@/styles/Company.module.css'
+import { companies } from '@/data/companies/companies'
+import Image from 'next/image'
+import Link from 'next/link'
+import Footer from '@/components/footer'
+import PageName from '@/components/head'
+import { useRouter } from 'next/router'
+import error from '@/assets/error.svg'
 
 export default function Company() {
-  const router = useRouter();
-  const { id } = router.query;
+  const router = useRouter()
+  const { id } = router.query
 
-  const company = companies.find((company) => company.id === Number(id));
+  const company = companies.find((company) => company.id === Number(id))
 
   return (
     <>
@@ -47,5 +47,5 @@ export default function Company() {
       </main>
       <Footer />
     </>
-  );
+  )
 }

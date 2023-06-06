@@ -7,6 +7,6 @@ export const sendContactForm = async (data: unknown) =>
       Accept: 'application/json'
     }
   }).then((res) => {
-    if (!res.ok) throw new Error('Falha ao enviar o e-mail!');
-    return res.json();
-  });
+    if (!res.ok) throw new Error('Falha ao enviar o e-mail!')
+    return res.json()
+  })

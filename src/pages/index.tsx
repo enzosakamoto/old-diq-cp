@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import Navbar from '@/components/navbar';
-import Square from '@/components/square';
-import PageName from '@/components/head';
-import styles from '@/styles/Home.module.css';
-import creative from '@/assets/creative.svg';
-import { companies } from '@/data/companies/companies';
+import Link from 'next/link'
+import Image from 'next/image'
+import Navbar from '@/components/navbar'
+import Square from '@/components/square'
+import PageName from '@/components/head'
+import styles from '@/styles/Home.module.css'
+import creative from '@/assets/creative.svg'
+import { companies } from '@/data/companies/companies'
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
                     id={company.id.toString()}
                     key={company.id}
                   />
-                );
+                )
             })}
           </div>
           <Link href="/companies">
@@ -46,5 +46,5 @@ export default function Home() {
         </section>
       </main>
     </>
-  );
+  )
 }

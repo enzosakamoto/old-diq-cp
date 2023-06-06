@@ -1,9 +1,9 @@
-import Footer from '@/components/footer';
-import PageName from '@/components/head';
-import Navbar from '@/components/navbar';
-import styles from '@/styles/FourOhFour.module.css';
-import Image from 'next/image';
-import fourohfour from '@/assets/fourohfour.svg';
+import Footer from '@/components/footer'
+import PageName from '@/components/head'
+import Navbar from '@/components/navbar'
+import styles from '@/styles/FourOhFour.module.css'
+import Image from 'next/image'
+import fourohfour from '@/assets/fourohfour.svg'
 
 export default function FourOhFour() {
   return (
@@ -22,5 +22,5 @@ export default function FourOhFour() {
       </main>
       <Footer />
     </>
-  );
+  )
 }

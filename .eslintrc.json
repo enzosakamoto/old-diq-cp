@@ -26,10 +26,13 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off",
+    "camelcase": "warn",
+    "semi": ["warn", "never"],
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "semi": false
       }
     ]
   }
