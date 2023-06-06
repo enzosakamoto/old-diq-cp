@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { mailOptions, transporter } from '../../config/nodemailer';
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { mailOptions, transporter } from '../../config/nodemailer'
 
 type Data = {
-  message: string;
-};
+  message: string
+}
 
 const CONTACT_MESSAGE_FIELDS = {
   name: 'Name',
@@ -13,7 +13,7 @@ const CONTACT_MESSAGE_FIELDS = {
   company: 'Company',
   relations: 'Relations',
   about: 'About'
-};
+}
 
 function generateEmailContent(data: NonNullable<unknown>) {
   const stringData = Object.entries(data).reduce(
@@ -22,7 +22,7 @@ function generateEmailContent(data: NonNullable<unknown>) {
         CONTACT_MESSAGE_FIELDS[key as keyof NonNullable<unknown>]
       }: \n${value}\n \n`),
     ''
-  );
+  )
 
   const htmlData = Object.entries(data).reduce(
     (str, [key, value]) =>
@@ -30,7 +30,7 @@ function generateEmailContent(data: NonNullable<unknown>) {
         CONTACT_MESSAGE_FIELDS[key as keyof NonNullable<unknown>]
       }</h1><p class="form-answer" align="left">${value}</p>`),
     ''
-  );
+  )
   return {
     text: stringData,
     html: `<!DOCTYPE html>
@@ -169,7 +169,7 @@ function generateEmailContent(data: NonNullable<unknown>) {
   </body>
 </html>
 `
-  };
+  }
 }
 
 export default async function handler(
@@ -177,7 +177,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === 'POST') {
-    const data = req.body;
+    const data = req.body
     if (
       !data.name ||
       !data.phone ||
@@ -185,21 +185,21 @@ export default async function handler(
       !data.company ||
       !data.about
     )
-      return res.status(400).json({ message: 'Bad request' });
+      return res.status(400).json({ message: 'Bad request' })
 
     try {
       await transporter.sendMail({
         ...mailOptions,
         ...generateEmailContent(data),
         subject: data.subject
-      });
+      })
 
-      return res.status(200).json({ message: 'Email sent' });
+      return res.status(200).json({ message: 'Email sent' })
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      console.log(error);
-      return res.status(400).json({ message: error.message });
+      console.log(error)
+      return res.status(400).json({ message: error.message })
     }
   }
-  return res.status(400).json({ message: 'Bad request' });
+  return res.status(400).json({ message: 'Bad request' })
 }
