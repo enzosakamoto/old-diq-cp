@@ -10,6 +10,7 @@ Website with partners from the Innovation and Quality Division of the Mauá Inst
 * [Technologies](#technologies)
 * [Features](#features)
 * [Screenshots](#screenshots)
+* [Documentation](#documentation)
 * [Setup](#setup)
 * [Environment variables](#environment-variables)
 * [Contact](#contact)
